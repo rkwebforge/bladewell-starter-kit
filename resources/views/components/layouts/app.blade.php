@@ -7,7 +7,7 @@
 
 @php
     $links = [
-        ['label' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'home'],
+        ['label' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'inbox'],
         ['label' => 'Settings', 'route' => 'profile.edit', 'icon' => 'settings'],
     ];
 @endphp
