@@ -42,6 +42,18 @@ final class WelcomeTest extends TestCase
         $this->get('/login')->assertOk()->assertDontSee('No account yet?');
     }
 
+    public function test_signed_in_people_can_reach_their_profile_and_sign_out_from_home(): void
+    {
+        $this->actingAs(User::factory()->create(['name' => 'Ana Silva']))
+            ->get('/')
+            ->assertSee('AS')
+            ->assertSee('href="'.route('profile.edit').'"', false)
+            ->assertSee('action="'.route('logout').'"', false);
+
+        $this->post('/logout');
+        $this->get('/')->assertDontSee('action="'.route('logout').'"', false);
+    }
+
     public function test_signed_in_people_are_not_told_to_sign_in(): void
     {
         $this->actingAs(User::factory()->create())
