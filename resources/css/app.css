@@ -17,16 +17,8 @@
     background-size: 18px 18px;
 }
 
-/* Switching theme: every element takes its new colours at once instead of fading at its own speed (inputs, buttons
-   and table rows have colour transitions of their own), and the page cross-fades as one picture; see theme.js.
-   Autofilled inputs keep base.css's endless delay, or the browser's autofill colour would show through. */
-[data-theme-changing],
-[data-theme-changing] *:not(:autofill),
-[data-theme-changing] *::before,
-[data-theme-changing] *::after {
-    transition: none;
-}
-
+/* Switching theme, the page cross-fades as one picture; see theme.js. (The widgets' base.css holds their own colour
+   transitions back while it happens.) */
 ::view-transition-group(root) {
     animation-duration: 200ms;
 }

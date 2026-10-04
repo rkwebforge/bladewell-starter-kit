@@ -2,6 +2,16 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.1
+
+Built on LarawellUI 0.2.2.
+
+- Tables change page, sort and filter without the browser reporting Content Security Policy violations for the fetched page's inline styles.
+- The widgets' PHP helpers are in Laravel Pint's default style, so Pint can run over the whole app: `pint.json` and its exclude for `app/View/Widget` are gone.
+- The theme switch uses the widgets' own `data-theme-changing` rule; the kit's copy of it is gone.
+- The back arrow sits closer to its label.
+- The quick start builds the frontend, so a new app's first page never fails.
+
 ## 2026.10.0
 
 The first release. Built on Laravel 13 and LarawellUI 0.2.1.
