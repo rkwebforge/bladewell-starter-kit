@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cda2add6397422fb1a2eb5b9207f1575",
+    "content-hash": "1b6588f7ea5eac4df8c02745c8a42e15",
     "packages": [
         {
             "name": "brick/math",
@@ -6638,6 +6638,70 @@
                 "source": "https://github.com/laravel/pint"
             },
             "time": "2026-09-10T10:47:55+00:00"
+        },
+        {
+            "name": "larawellui/larawellui",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rkwebforge/larawellui.git",
+                "reference": "51ccd224f4497b42e4cf84ff362e7e5c24174d17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rkwebforge/larawellui/zipball/51ccd224f4497b42e4cf84ff362e7e5c24174d17",
+                "reference": "51ccd224f4497b42e4cf84ff362e7e5c24174d17",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^12.0|^13.0",
+                "illuminate/filesystem": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LarawellUi\\LarawellUiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LarawellUi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Krishnaprasad R",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Copy-paste Blade + Tailwind v4 widgets for Laravel. The installer copies the source into your app; you own it from there.",
+            "homepage": "https://larawellui.wasmer.app",
+            "keywords": [
+                "Forms",
+                "blade",
+                "blade-components",
+                "components",
+                "datepicker",
+                "laravel",
+                "livewire",
+                "tailwindcss",
+                "ui-components",
+                "widgets"
+            ],
+            "support": {
+                "docs": "https://larawellui.wasmer.app/docs/installation",
+                "issues": "https://github.com/rkwebforge/larawellui-site/issues",
+                "source": "https://github.com/rkwebforge/larawellui"
+            },
+            "time": "2026-10-03T19:15:13+00:00"
         },
         {
             "name": "mockery/mockery",
