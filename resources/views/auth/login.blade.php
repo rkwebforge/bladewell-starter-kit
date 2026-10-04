@@ -15,7 +15,9 @@
         <x-widget.button type="submit" class="w-full">Sign in</x-widget.button>
     </form>
 
-    <x-slot:footer>
-        No account yet? <a href="{{ route('register') }}" class="text-link hover:text-link-hover font-medium underline-offset-4 hover:underline">Create one</a>
-    </x-slot:footer>
+    @if (config('security.registration'))
+        <x-slot:footer>
+            No account yet? <a href="{{ route('register') }}" class="text-link hover:text-link-hover font-medium underline-offset-4 hover:underline">Create one</a>
+        </x-slot:footer>
+    @endif
 </x-layouts.guest>

@@ -17,7 +17,7 @@ final class ProfileTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->actingAs($user)
+        $this->confirmedAs($user)
             ->get('/settings/profile')
             ->assertOk()
             ->assertSee($user->name)
@@ -28,7 +28,7 @@ final class ProfileTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->actingAs($user)
+        $this->confirmedAs($user)
             ->patch('/settings/profile', ['name' => 'Ana Silva', 'email' => $user->email])
             ->assertSessionHasNoErrors()
             ->assertRedirect('/settings/profile')
@@ -42,7 +42,7 @@ final class ProfileTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->actingAs($user)
+        $this->confirmedAs($user)
             ->patch('/settings/profile', ['name' => $user->name, 'email' => 'new@example.com'])
             ->assertRedirect(route('verification.notice', absolute: false));
 
@@ -104,10 +104,28 @@ final class ProfileTest extends TestCase
 
         $this->assertNotNull($user->fresh());
 
-        $this->actingAs($user)
+        $this->confirmedAs($user)
             ->from('/settings/profile')
             ->followingRedirects()
             ->delete('/settings/profile', ['password' => 'wrong-password'])
             ->assertSee('data-open-on-load', false);
+    }
+
+    public function test_the_profile_asks_for_the_password_first(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)->get('/settings/profile')->assertRedirect(route('password.confirm', absolute: false));
+        $this->actingAs($user)
+            ->patch('/settings/profile', ['name' => $user->name, 'email' => 'attacker@example.com'])
+            ->assertRedirect(route('password.confirm', absolute: false));
+
+        $this->assertSame($user->email, $user->fresh()->email);
+    }
+
+    // Signed in, with the password confirmed a moment ago, as the profile requires.
+    private function confirmedAs(User $user): self
+    {
+        return $this->actingAs($user)->withSession(['auth.password_confirmed_at' => time()]);
     }
 }
