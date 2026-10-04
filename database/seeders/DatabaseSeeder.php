@@ -12,6 +12,14 @@ final class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // The demo account's password is "password", printed in the README for anyone to read. On a live server it
+        // would be a door left open, so it's only ever made on your own machine.
+        if (! app()->environment(['local', 'testing'])) {
+            $this->command?->warn('Skipped the demo account: it is only created when APP_ENV is local.');
+
+            return;
+        }
+
         $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',

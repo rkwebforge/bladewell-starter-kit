@@ -32,6 +32,7 @@ What this starter kit protects you from, what you need to do before going live, 
 
 - [ ] `APP_ENV=production` and `APP_DEBUG=false`. Debug mode shows your code, settings and secrets to anyone who triggers an error.
 - [ ] A fresh `APP_KEY` (`php artisan key:generate`), different from the one you developed with. Never commit `.env`.
+- [ ] No `test@example.com` account on the live database. `db:seed` refuses to create it outside `APP_ENV=local`, but check if you copied a local database across.
 - [ ] HTTPS on your domain. `APP_URL` starts with `https://`.
 - [ ] Behind a load balancer or proxy (Forge with a load balancer, Cloudflare, AWS ELB, Heroku…)? Tell Laravel to trust it, or it can't see that requests are HTTPS or who sent them, and the rate limits treat everyone as one IP. In `bootstrap/app.php`: `$middleware->trustProxies(at: ['10.0.0.0/8'])`, with your proxy's addresses, not `'*'` unless the proxy is the only way in.
 - [ ] A real mail driver (`MAIL_MAILER`), so verification and reset emails arrive.
