@@ -1,4 +1,4 @@
-<x-layouts.guest title="Forgot your password?" description="Enter your email and we'll send you a link to choose a new one.">
+<x-layouts.guest title="Forgot your password?" :back="route('login')" back-label="Sign in" description="Enter your email and we'll send you a link to choose a new one.">
     <x-widget.alert flash="status" tone="success" class="mb-6" />
 
     <form method="POST" action="{{ route('password.email') }}" class="space-y-5">

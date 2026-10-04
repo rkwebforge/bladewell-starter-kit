@@ -21,6 +21,9 @@ final class SecurityHeaders
 
         $response = $next($request);
 
+        // Every page depends on who's signed in, so Back must ask the server again rather than show a stored copy: the
+        // dashboard after signing out, a sign-in form whose CSRF token has expired, or a redirect from before.
+        $response->headers->set('Cache-Control', 'no-store, private');
         // Stops the browser guessing a file's type, e.g. running an uploaded "image" as a script.
         $response->headers->set('X-Content-Type-Options', 'nosniff');
         // Other sites see only your domain in the Referer header, never full URLs (which can hold tokens).

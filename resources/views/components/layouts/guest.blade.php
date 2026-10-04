@@ -3,6 +3,9 @@
     'title',
     // A line under the heading.
     'description' => null,
+    // Where the arrow in the top corner leads, and its text: the page people most likely came from.
+    'back' => route('home'),
+    'backLabel' => 'Home',
 ])
 
 <!DOCTYPE html>
@@ -11,7 +14,8 @@
     <x-layouts.head :title="$title" />
 </head>
 <body class="bg-dots text-foreground min-h-screen font-sans antialiased">
-    <div class="absolute end-4 top-4">
+    <div class="absolute inset-x-4 top-4 flex items-center justify-between">
+        <x-widget.button.back :href="$back" :label="$backLabel" class="px-2 py-2.5" />
         <x-theme-toggle />
     </div>
 

@@ -1,4 +1,4 @@
-<x-layouts.guest title="Confirm your password" description="This part of your account is protected. Enter your password to carry on; we won't ask again for a while.">
+<x-layouts.guest title="Confirm your password" :back="route('dashboard')" back-label="Dashboard" description="This part of your account is protected. Enter your password to carry on; we won't ask again for a while.">
     <form method="POST" action="{{ route('password.confirm') }}" class="space-y-5">
         @csrf
 

@@ -13,12 +13,14 @@ The first release. Built on Laravel 13 and LarawellUI 0.2.1.
 - Dashboard with your own sign-in history in a sortable, paginated table that turns into cards on phones, and a warning after recent wrong passwords.
 - Settings: profile, password, signing out other devices, and deleting the account.
 - Light, dark and system theme, remembered in the browser and applied before the page is drawn.
+- A way back from every page: sign-in pages lead to where people came from, and plain error pages (404, expired links, too many attempts, server errors) lead home.
 - Every page fits screens from 320px wide.
 
 ### Security
 
 - Every setting in `config/security.php`, each explained; `SECURITY.md` has a go-live checklist and what to change for Stripe, analytics, embedding or Livewire.
-- Content Security Policy with a fresh nonce on every request, plus clickjacking, MIME-sniffing, referrer and HSTS headers.
+- Content Security Policy with a fresh nonce on every request, plus clickjacking, MIME-sniffing, referrer and HSTS headers, on every response.
+- Pages are never stored by the browser, so Back after signing out can't show the dashboard again.
 - Sign-in, sign-up, password reset and confirmation rate limited; registration can be turned off.
 - New passwords need 12 characters and, in production, mustn't appear in known data breaches.
 - Changing the email asks for the password again; changing the password signs out every other session.
