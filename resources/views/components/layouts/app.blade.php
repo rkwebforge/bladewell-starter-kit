@@ -18,7 +18,7 @@
 <head>
     <x-layouts.head :title="$title" />
 </head>
-<body class="bg-field text-foreground min-h-screen font-sans antialiased">
+<body class="bg-dots text-foreground min-h-screen font-sans antialiased">
     <a href="#main" class="bg-surface sr-only rounded-lg px-4 py-2 focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50">Skip to content</a>
 
     <header class="bg-surface border-line border-b">
