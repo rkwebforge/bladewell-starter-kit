@@ -9,6 +9,7 @@ Plain Blade and a small vanilla JS module per widget: no React, Vue, Inertia or 
 ```bash
 laravel new my-app --using=larawellui/starter-kit
 cd my-app
+npm install && npm run build
 composer run dev
 ```
 
