@@ -24,6 +24,25 @@ function apply(theme) {
     }
 }
 
+// Changes the theme in one go. data-theme-changing holds back every element's own colour transition (see app.css),
+// so fields and buttons don't trail behind; where the browser has view transitions, the page cross-fades instead.
+function switchTo(theme) {
+    const root = document.documentElement;
+    const flip = () => {
+        root.toggleAttribute('data-theme-changing', true);
+        apply(theme);
+    };
+    const done = () => root.removeAttribute('data-theme-changing');
+
+    if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.startViewTransition(flip).finished.finally(done);
+    } else {
+        flip();
+        // Two frames: the new colours have to be painted before transitions come back, or they'd animate.
+        requestAnimationFrame(() => requestAnimationFrame(done));
+    }
+}
+
 document.addEventListener('click', (event) => {
     const item = event.target.closest?.('[data-theme-choice]');
     if (!item) {
@@ -35,11 +54,11 @@ document.addEventListener('click', (event) => {
     } catch {
         // Not saved, but this page still switches.
     }
-    apply(choice);
+    switchTo(choice);
 });
 
 // System follows the device as it changes (many switch to dark at sunset), and other open tabs follow a new choice.
-deviceIsDark.addEventListener('change', () => apply(saved()));
-window.addEventListener('storage', (event) => event.key === KEY && apply(event.newValue));
+deviceIsDark.addEventListener('change', () => switchTo(saved()));
+window.addEventListener('storage', (event) => event.key === KEY && switchTo(event.newValue));
 
 apply(saved());
