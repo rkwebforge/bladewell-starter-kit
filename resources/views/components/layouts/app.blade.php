@@ -38,7 +38,8 @@
                         ])
                     >
                         <x-widget.icon :name="$link['icon']" class="size-4" />
-                        <span class="hidden sm:inline">{{ $link['label'] }}</span>
+                        {{-- sr-only, not hidden, so the icon-only links on phones keep their names. --}}
+                        <span class="sr-only sm:not-sr-only">{{ $link['label'] }}</span>
                     </a>
                 @endforeach
             </nav>

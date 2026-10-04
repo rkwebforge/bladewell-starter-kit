@@ -5,7 +5,7 @@
         <h2 id="users-heading" class="mb-3 text-lg font-semibold">Users</h2>
 
         {{-- Sorting is checked against a fixed list in DashboardController before it reaches the query. --}}
-        <x-widget.table caption="Users" :rows="$users" pagination="numbers" :columns="[
+        <x-widget.table caption="Users" :rows="$users" pagination="numbers" stack :columns="[
             ['label' => 'Name', 'key' => 'name', 'sortable' => true],
             ['label' => 'Email', 'key' => 'email', 'sortable' => true],
             'Status',
@@ -14,7 +14,8 @@
             @foreach ($users as $user)
                 <x-widget.table.row>
                     <td class="font-medium">{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
+                    {{-- Long addresses break before the @ on narrow cards, and anywhere only if a half still won't fit. --}}
+                    <td><span class="min-w-0 wrap-anywhere">{{ Str::before($user->email, '@') }}<wbr>{{ '@'.Str::after($user->email, '@') }}</span></td>
                     <td>
                         @if ($user->hasVerifiedEmail())
                             <x-widget.table.badge tone="success">Verified</x-widget.table.badge>

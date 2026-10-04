@@ -34,7 +34,9 @@ final class DashboardTest extends TestCase
             ->assertOk()
             ->assertSee('Ben Carter')
             ->assertSee('AS')
-            ->assertSee(route('logout'));
+            ->assertSee(route('logout'))
+            // The nav shows only icons on phones; the names stay for screen readers.
+            ->assertSee('<span class="sr-only sm:not-sr-only">Dashboard</span>', false);
     }
 
     public function test_it_sorts_by_a_column(): void
