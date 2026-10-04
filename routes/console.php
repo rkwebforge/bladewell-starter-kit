@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+declare(strict_types=1);
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+use Illuminate\Support\Facades\Schedule;
+
+// Deletes sign-in history older than config('security.sign_in_history_days'). Needs the scheduler running in
+// production: one cron entry, `* * * * * php artisan schedule:run` (see SECURITY.md).
+Schedule::command('model:prune')->daily();

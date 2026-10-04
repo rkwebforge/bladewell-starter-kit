@@ -4,7 +4,7 @@
 
         <x-widget.text-input name="name" label="Name" autocomplete="name" required autofocus />
         <x-widget.text-input name="email" type="email" label="Email" autocomplete="username" required />
-        <x-widget.password name="password" label="Password" new required />
+        <x-new-password required />
         <x-widget.password name="password_confirmation" label="Confirm password" autocomplete="new-password" required />
 
         <x-widget.button type="submit" class="w-full">Create account</x-widget.button>

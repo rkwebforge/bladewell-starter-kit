@@ -12,11 +12,11 @@ final class WelcomeTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_the_home_page_links_to_the_users_table_and_every_page(): void
+    public function test_the_home_page_links_to_every_page(): void
     {
         $this->get('/')
             ->assertOk()
-            ->assertSee('See the users table')
+            ->assertSee('See the dashboard')
             ->assertSee('href="'.route('dashboard').'"', false)
             ->assertSee('href="'.route('profile.edit').'"', false)
             ->assertSee('href="'.route('login').'"', false)
@@ -32,6 +32,14 @@ final class WelcomeTest extends TestCase
 
         $this->post('/login', ['email' => $user->email, 'password' => 'password'])
             ->assertRedirect(route('dashboard', absolute: false));
+    }
+
+    public function test_the_create_account_links_go_when_registration_is_off(): void
+    {
+        config(['security.registration' => false]);
+
+        $this->get('/')->assertOk()->assertDontSee('href="'.route('register').'"', false);
+        $this->get('/login')->assertOk()->assertDontSee('No account yet?');
     }
 
     public function test_signed_in_people_are_not_told_to_sign_in(): void

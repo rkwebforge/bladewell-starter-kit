@@ -23,7 +23,7 @@ composer run dev
 
 It uses SQLite by default. For MySQL, set the `DB_*` values in `.env`, then run `php artisan migrate`.
 
-To try it with data, run `php artisan db:seed`: it creates `test@example.com` (password `password`) and 24 more users, so the users table on the dashboard has a few pages. The home page links to every page; the ones behind sign in ask for it first, then go straight there.
+To try it with data, run `php artisan db:seed`: it creates `test@example.com` (password `password`) with a few pages of sign-in history for the dashboard table. The home page links to every page; the ones behind sign in ask for it first, then go straight there.
 
 ## What's included
 
@@ -33,10 +33,17 @@ To try it with data, run `php artisan db:seed`: it creates `test@example.com` (p
 | Create account | `/register` | text-input, password (with its rule checklist), button |
 | Forgot / reset password | `/forgot-password`, `/reset-password/{token}` | text-input, password, button, alert |
 | Verify email | `/verify-email` | button, alert |
-| Dashboard | `/dashboard` | table (sortable, paginated), dropdown account menu |
-| Settings | `/settings/profile` | text-input, password, button, breadcrumbs, modal (delete account), toast |
+| Confirm password | `/confirm-password` | password, button |
+| Dashboard: your sign-in history | `/dashboard` | table (sortable, paginated, cards on phones), alert, dropdown account menu |
+| Settings | `/settings/profile` | text-input, password, button, breadcrumbs, modal (other devices, delete account), toast |
 
-Sign in is rate limited per email and IP. New accounts verify their email before reaching the dashboard; in development the link is written to `storage/logs/laravel.log` (`MAIL_MAILER=log`). To skip verification, remove `implements MustVerifyEmail` from `app/Models/User.php`.
+New accounts verify their email before reaching the dashboard; in development the link is written to `storage/logs/laravel.log` (`MAIL_MAILER=log`). To skip verification, remove `implements MustVerifyEmail` from `app/Models/User.php`.
+
+## Security
+
+Safe by default, and every choice is in one file, [`config/security.php`](config/security.php), with a comment on what changing it costs. Sign-in is rate limited, passwords need 12+ characters (and are checked against known breaches in production), changing your email asks for your password, a password change signs out your other sessions, and every page sends a strict Content Security Policy.
+
+[SECURITY.md](SECURITY.md) has the full list, a checklist for going live, and what to change when your app adds Stripe, analytics, embedding or Livewire.
 
 ## Where things live
 
@@ -44,7 +51,10 @@ Sign in is rate limited per email and IP. New accounts verify their email before
 routes/auth.php                         sign in, registration, password reset, verification
 routes/web.php                          dashboard and settings
 app/Http/Controllers/Auth/              the auth controllers
-app/Http/Controllers/Settings/          profile and password
+app/Http/Controllers/Settings/          profile, password, other devices
+app/Http/Middleware/SecurityHeaders.php the Content Security Policy and other browser security headers
+app/Listeners/RecordSignIn.php          keeps the sign-in history
+config/security.php                     every security setting, explained
 resources/views/components/layouts/     app (header and account menu) and guest (centred card)
 resources/views/auth/                   the auth pages
 resources/views/components/widget/      LarawellUI widgets: yours to edit

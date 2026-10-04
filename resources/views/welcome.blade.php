@@ -1,11 +1,14 @@
 @php
     // Pages behind sign in send guests to it first, then straight on to the page they picked.
     $pages = [
-        ['title' => 'Users table', 'text' => 'Sortable, paginated, stacks into cards on phones.', 'icon' => 'users', 'route' => 'dashboard', 'private' => true],
-        ['title' => 'Settings', 'text' => 'Profile, password and deleting the account.', 'icon' => 'settings', 'route' => 'profile.edit', 'private' => true],
+        ['title' => 'Sign-in history', 'text' => 'Your own sign-ins and wrong passwords, in a sortable table.', 'icon' => 'shield-check', 'route' => 'dashboard', 'private' => true],
+        ['title' => 'Settings', 'text' => 'Profile, password, other devices and deleting the account.', 'icon' => 'settings', 'route' => 'profile.edit', 'private' => true],
         ['title' => 'Sign in', 'text' => 'Rate limited, with remember me.', 'icon' => 'lock', 'route' => 'login', 'private' => false],
-        ['title' => 'Create account', 'text' => 'Live password rules, then email verification.', 'icon' => 'user', 'route' => 'register', 'private' => false],
     ];
+
+    if (config('security.registration')) {
+        $pages[] = ['title' => 'Create account', 'text' => 'Live password rules, then email verification.', 'icon' => 'user', 'route' => 'register', 'private' => false];
+    }
 @endphp
 
 <!DOCTYPE html>
@@ -22,7 +25,9 @@
                 <x-widget.button :href="route('dashboard')" size="sm">Dashboard</x-widget.button>
             @else
                 <x-widget.button :href="route('login')" variant="neutral" size="sm">Sign in</x-widget.button>
-                <x-widget.button :href="route('register')" size="sm">Create account</x-widget.button>
+                @if (config('security.registration'))
+                    <x-widget.button :href="route('register')" size="sm">Create account</x-widget.button>
+                @endif
             @endauth
         </nav>
     </header>
@@ -35,7 +40,7 @@
                 Plain Blade and a little vanilla JS: no React, Vue or Alpine.
             </p>
             <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-                <x-widget.button :href="route('dashboard')" size="lg" icon-end="arrow-right">See the users table</x-widget.button>
+                <x-widget.button :href="route('dashboard')" size="lg" icon-end="arrow-right">See the dashboard</x-widget.button>
                 <x-widget.button href="https://larawellui.wasmer.app" variant="tertiary" size="lg" icon-end="external-link">Browse the widgets</x-widget.button>
             </div>
             @guest
