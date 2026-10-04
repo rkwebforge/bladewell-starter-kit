@@ -23,6 +23,8 @@ composer run dev
 
 It uses SQLite by default. For MySQL, set the `DB_*` values in `.env`, then run `php artisan migrate`.
 
+To try it with data, run `php artisan db:seed`: it creates `test@example.com` (password `password`) and 24 more users, so the users table on the dashboard has a few pages. The home page links to every page; the ones behind sign in ask for it first, then go straight there.
+
 ## What's included
 
 | Page | Route | Widgets |

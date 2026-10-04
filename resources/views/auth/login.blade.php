@@ -7,7 +7,7 @@
         <x-widget.text-input name="email" type="email" label="Email" autocomplete="username" required autofocus />
         <x-widget.password name="password" label="Password" required />
 
-        <div class="flex items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
             <x-widget.checkbox name="remember" label="Remember me" />
             <a href="{{ route('password.request') }}" class="text-link hover:text-link-hover text-sm whitespace-nowrap underline-offset-4 hover:underline">Forgot password?</a>
         </div>
