@@ -24,7 +24,7 @@ function apply(theme) {
     }
 }
 
-// Changes the theme in one go. data-theme-changing holds back every element's own colour transition (see app.css),
+// Changes the theme in one go. data-theme-changing holds back every element's own colour transition (the widgets' base.css),
 // so fields and buttons don't trail behind; where the browser has view transitions, the page cross-fades instead.
 function switchTo(theme) {
     const root = document.documentElement;

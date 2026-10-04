@@ -74,8 +74,6 @@ php artisan larawell:list
 php artisan larawell:add datepicker
 ```
 
-`pint.json` leaves `app/View/Widget` alone: reformatting those files would mark them as edited, and updates would then skip them.
-
 ### Keeping widgets up to date
 
 Your app keeps the widgets exactly as they were when you created it; nothing changes behind your back. New LarawellUI releases bring fixes and new widgets, and you take them when you choose:

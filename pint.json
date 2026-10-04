@@ -1,6 +1,0 @@
-{
-    "preset": "laravel",
-    "exclude": [
-        "app/View/Widget"
-    ]
-}
