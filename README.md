@@ -7,20 +7,13 @@ Plain Blade and a small vanilla JS module per widget: no React, Vue, Inertia or 
 ## Start a new app
 
 ```bash
-laravel new my-app --using=larawellui/starter-kit
-cd my-app
-npm install && npm run build
-composer run dev
-```
-
-Or without the Laravel installer:
-
-```bash
 composer create-project larawellui/starter-kit my-app
 cd my-app
 npm install && npm run build
 composer run dev
 ```
+
+With the Laravel installer, `laravel new my-app --using=larawellui/starter-kit` does the same first step. (No `laravel` command? `composer global require laravel/installer` installs it.)
 
 It uses SQLite by default. For MySQL, set the `DB_*` values in `.env`, then run `php artisan migrate`.
 
