@@ -16,7 +16,7 @@
 <head>
     <x-layouts.head />
 </head>
-<body class="bg-field text-foreground min-h-screen font-sans antialiased">
+<body class="bg-dots text-foreground min-h-screen font-sans antialiased">
     <header class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-4 sm:px-6 sm:py-6">
         <span class="font-semibold">{{ config('app.name') }}</span>
 
