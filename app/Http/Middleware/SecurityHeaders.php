@@ -56,11 +56,14 @@ final class SecurityHeaders
     private function policy(): string
     {
         $nonce = "'nonce-".Vite::cspNonce()."'";
+        // The theme script inlined in <head>, allowed by its hash: it's the same on every page, so pages the table
+        // fetches in place match too, which a nonce (new each request) wouldn't.
+        $theme = "'sha256-".base64_encode((string) hash_file('sha256', resource_path('js/theme-boot.js'), true))."'";
         $dev = $this->viteDevServer();
 
         $directives = [
             'default-src' => ["'self'"],
-            'script-src' => ["'self'", $nonce, ...$dev, ...config('security.csp.script')],
+            'script-src' => ["'self'", $nonce, $theme, ...$dev, ...config('security.csp.script')],
             // While `npm run dev` runs, Vite injects CSS through <style> tags it can't put a nonce on. The built CSS
             // that production serves is a file, so this never reaches it.
             'style-src' => ["'self'", $nonce, ...$dev, ...($dev === [] ? [] : ["'unsafe-inline'"]), ...config('security.csp.style')],

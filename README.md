@@ -57,6 +57,8 @@ app/Listeners/RecordSignIn.php          keeps the sign-in history
 config/security.php                     every security setting, explained
 resources/views/components/layouts/     app (header and account menu) and guest (centred card)
 resources/views/auth/                   the auth pages
+resources/views/components/theme-toggle.blade.php   the Light / Dark / System menu
+resources/js/theme.js, theme-boot.js    switching the theme, and applying it before the page is drawn
 resources/views/components/widget/      LarawellUI widgets: yours to edit
 resources/js/widget/, resources/css/widget/
 larawellui.lock                         which widget files you've edited; commit it

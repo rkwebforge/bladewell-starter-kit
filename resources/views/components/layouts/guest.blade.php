@@ -11,6 +11,10 @@
     <x-layouts.head :title="$title" />
 </head>
 <body class="bg-dots text-foreground min-h-screen font-sans antialiased">
+    <div class="absolute end-4 top-4">
+        <x-theme-toggle />
+    </div>
+
     <main class="flex min-h-screen flex-col items-center justify-center px-4 py-12">
         <a href="{{ route('home') }}" class="mb-8 text-lg font-semibold">{{ config('app.name') }}</a>
 

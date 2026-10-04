@@ -2,6 +2,9 @@
 @import "./widget/theme.css";
 @import "./widget/base.css";
 
+/* dark: utilities follow the theme toggle (the dark class on <html>), not just the device setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 

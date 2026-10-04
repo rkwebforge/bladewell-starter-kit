@@ -22,7 +22,7 @@
     <a href="#main" class="bg-surface sr-only rounded-lg px-4 py-2 focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50">Skip to content</a>
 
     <header class="bg-surface border-line border-b">
-        <div class="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4 sm:px-6">
+        <div class="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
             <a href="{{ route('dashboard') }}" class="font-semibold">{{ config('app.name') }}</a>
 
             <nav aria-label="Main" class="flex items-center gap-1">
@@ -44,7 +44,8 @@
                 @endforeach
             </nav>
 
-            <div class="ms-auto">
+            <div class="ms-auto flex items-center gap-1">
+                <x-theme-toggle />
                 <x-widget.dropdown align="end" label="Account: {{ $user->name }}, {{ $user->email }}">
                     <x-slot:trigger class="hover:bg-field py-1.5 ps-1.5 pe-3">
                         <span aria-hidden="true" class="bg-primary/10 text-primary grid size-8 place-items-center rounded-full text-xs font-semibold">{{ $user->initials() }}</span>

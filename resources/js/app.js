@@ -10,3 +10,4 @@ import './widget/search';
 import './widget/select';
 import './widget/table';
 import './widget/toast';
+import './theme';
