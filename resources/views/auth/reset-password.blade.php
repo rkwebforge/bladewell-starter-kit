@@ -1,4 +1,4 @@
-<x-layouts.guest title="Choose a new password">
+<x-layouts.guest title="Choose a new password" :back="route('login')" back-label="Sign in">
     <form method="POST" action="{{ route('password.store') }}" class="space-y-5">
         @csrf
         <input type="hidden" name="token" value="{{ $request->route('token') }}">

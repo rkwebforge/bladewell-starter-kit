@@ -24,6 +24,9 @@ What this starter kit protects you from, what you need to do before going live, 
 | Sort columns checked against a fixed list before they reach SQL | `DashboardController` |
 | Session data encrypted; cookies HTTP-only, `SameSite=Lax`, HTTPS-only in production | `config/session.php` |
 | Content Security Policy with a fresh nonce per request (stops injected scripts running) | `SecurityHeaders` middleware |
+| Pages never kept by the browser: Back after signing out asks the server again, so the next person at a shared computer can't see your pages | `SecurityHeaders` middleware |
+| Headers on every response, redirects and error pages included | Global middleware in `bootstrap/app.php` |
+| Error pages that never show details, each with a way home | `resources/views/errors/` |
 | No framing by other sites (clickjacking), no MIME sniffing, limited Referer, HSTS in production | `SecurityHeaders` middleware |
 | HTTPS links in production; strict Eloquent while you build; no `db:wipe` in production | `AppServiceProvider` |
 | Dependencies checked for known vulnerabilities on every push | `.github/workflows/ci.yml` |
