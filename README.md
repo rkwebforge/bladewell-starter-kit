@@ -100,6 +100,8 @@ The kit is ready for AI coding agents (Claude Code, Codex, Cursor, Copilot and o
 
 Claude Code finds both MCP servers in `.mcp.json` by itself. For another agent, run `php artisan boost:install` and pick it: Boost writes that agent's MCP settings and instructions file; add `larawellui` (`php artisan larawell:mcp`) next to `laravel-boost` there. `CLAUDE.md` and `AGENTS.md` are generated, so write your own rules in `.ai/guidelines/`, then run `php artisan boost:update`.
 
+Commit these files: they're the project's instructions, so every agent and every teammate works by the same rules, and changes to them get reviewed like code. Your personal ones stay out of git: `CLAUDE.local.md`, `.claude/settings.local.json`, `.codex/` and `.cursor/` are in `.gitignore`. Never put API keys in `.mcp.json`; use environment variables.
+
 Boost is a development dependency: deploy with `composer install --no-dev` and it isn't on your server.
 
 ## Tests
