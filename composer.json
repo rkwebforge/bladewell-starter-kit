@@ -12,6 +12,12 @@
         "authentication"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Krishnaprasad R",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.17",

@@ -73,22 +73,34 @@ php artisan larawell:list
 php artisan larawell:add datepicker
 ```
 
-To update them after `composer update larawellui/larawellui`:
+`pint.json` leaves `app/View/Widget` alone: reformatting those files would mark them as edited, and updates would then skip them.
+
+### Keeping widgets up to date
+
+Your app keeps the widgets exactly as they were when you created it; nothing changes behind your back. New LarawellUI releases bring fixes and new widgets, and you take them when you choose:
 
 ```bash
-php artisan larawell:add --installed   # updates files you haven't edited, reports the ones you have
-php artisan larawell:diff              # shows what changed in the ones you have
+composer require --dev larawellui/larawellui:^0.3   # move to the new release (the version from its changelog)
+php artisan larawell:add --installed                # update the widget files you haven't edited
+php artisan larawell:diff                           # see what changed in the ones you have
+php artisan larawell:add new-widget                 # add a widget that's new in that release
 ```
 
-`pint.json` leaves `app/View/Widget` alone: reformatting those files would mark them as edited, and updates would then skip them.
+`larawell:add --installed` never overwrites a file you've edited: it reports it, and `larawell:diff` shows the difference so you can merge by hand. `larawellui.lock` is how it tells them apart, so commit it.
+
+While LarawellUI is below 1.0, `composer update` alone stays within the minor version you have: `^0.2.1` gets 0.2.x fixes but never 0.3.0, as Composer treats each 0.x minor release as possibly breaking. That's why the first command names the version. Read the [changelog](https://github.com/rkwebforge/larawellui/blob/main/CHANGELOG.md) for the widgets you use before moving.
 
 ## AI agents
 
-`php artisan larawell:mcp` is an MCP server that lists the widgets, their props and examples, and can install them. For Claude Code:
+The kit is ready for AI coding agents (Claude Code, Codex, Cursor, Copilot and others):
 
-```bash
-claude mcp add larawellui -- php artisan larawell:mcp
-```
+- **[Laravel Boost](https://github.com/laravel/boost)** gives them this app's Laravel version, database schema, logs, errors and version-matched Laravel docs, through its MCP server (`php artisan boost:mcp`).
+- **`php artisan larawell:mcp`** lets them look up every widget's props and examples, and install widgets.
+- **`CLAUDE.md` and `AGENTS.md`** tell them how to work here: the kit's rules (widgets, the Content Security Policy, `config/security.php`, tests) and a careful working style.
+
+Claude Code finds both MCP servers in `.mcp.json` by itself. For another agent, run `php artisan boost:install` and pick it: Boost writes that agent's MCP settings and instructions file; add `larawellui` (`php artisan larawell:mcp`) next to `laravel-boost` there. `CLAUDE.md` and `AGENTS.md` are generated, so write your own rules in `.ai/guidelines/`, then run `php artisan boost:update`.
+
+Boost is a development dependency: deploy with `composer install --no-dev` and it isn't on your server.
 
 ## Tests
 
@@ -98,6 +110,10 @@ php artisan test
 
 Every flow above has a feature test in `tests/Feature`.
 
+## Versions
+
+The kit is versioned by date: `2026.10.0` is the first release of October 2026, and `2026.10.1` a fix to it. You copy a starter kit once rather than upgrade it, so the version says how fresh your copy is. [CHANGELOG.md](CHANGELOG.md) lists what each release changed.
+
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
