@@ -21,6 +21,7 @@
         <span class="font-semibold">{{ config('app.name') }}</span>
 
         <nav aria-label="Account" class="flex items-center gap-2">
+            <x-theme-toggle />
             @auth
                 <x-widget.button :href="route('dashboard')" size="sm">Dashboard</x-widget.button>
             @else
