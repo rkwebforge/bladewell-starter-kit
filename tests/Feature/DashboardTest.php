@@ -32,6 +32,8 @@ final class DashboardTest extends TestCase
             ->assertOk()
             ->assertSee('AS')
             ->assertSee(route('logout'))
+            // The app name leads back to the home page.
+            ->assertSee('<a href="'.route('home').'" class="font-semibold">', false)
             // The nav shows only icons on phones; the names stay for screen readers.
             ->assertSee('<span class="sr-only sm:not-sr-only">Dashboard</span>', false);
     }

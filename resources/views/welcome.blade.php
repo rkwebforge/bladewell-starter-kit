@@ -24,6 +24,7 @@
             <x-theme-toggle />
             @auth
                 <x-widget.button :href="route('dashboard')" size="sm">Dashboard</x-widget.button>
+                <x-account-menu />
             @else
                 <x-widget.button :href="route('login')" variant="neutral" size="sm">Sign in</x-widget.button>
                 @if (config('security.registration'))

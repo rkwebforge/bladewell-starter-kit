@@ -6,7 +6,6 @@
 ])
 
 @php
-    $user = auth()->user();
     $links = [
         ['label' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'home'],
         ['label' => 'Settings', 'route' => 'profile.edit', 'icon' => 'settings'],
@@ -23,7 +22,7 @@
 
     <header class="bg-surface border-line border-b">
         <div class="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
-            <a href="{{ route('dashboard') }}" class="font-semibold">{{ config('app.name') }}</a>
+            <a href="{{ route('home') }}" class="font-semibold">{{ config('app.name') }}</a>
 
             <nav aria-label="Main" class="flex items-center gap-1">
                 @foreach ($links as $link)
@@ -46,21 +45,7 @@
 
             <div class="ms-auto flex items-center gap-1">
                 <x-theme-toggle />
-                <x-widget.dropdown align="end" label="Account: {{ $user->name }}, {{ $user->email }}">
-                    <x-slot:trigger class="hover:bg-field py-1.5 ps-1.5 pe-3">
-                        <span aria-hidden="true" class="bg-primary/10 text-primary grid size-8 place-items-center rounded-full text-xs font-semibold">{{ $user->initials() }}</span>
-                        <span class="hidden text-sm font-medium sm:inline">{{ $user->name }}</span>
-                        <x-widget.icon name="chevron-down" class="size-4 opacity-60" />
-                    </x-slot:trigger>
-
-                    <div aria-hidden="true" class="px-3 pt-1.5 pb-2">
-                        <p class="text-foreground/60 text-xs">Signed in as</p>
-                        <p class="truncate font-medium">{{ $user->email }}</p>
-                    </div>
-                    <x-widget.dropdown.divider />
-                    <x-widget.dropdown.item :href="route('profile.edit')" icon="user">Profile</x-widget.dropdown.item>
-                    <x-widget.dropdown.item :action="route('logout')" icon="log-out">Sign out</x-widget.dropdown.item>
-                </x-widget.dropdown>
+                <x-account-menu />
             </div>
         </div>
     </header>
