@@ -23,7 +23,8 @@
         <nav aria-label="Account" class="flex items-center gap-2">
             <x-theme-toggle />
             @auth
-                <x-widget.button :href="route('dashboard')" size="sm">Dashboard</x-widget.button>
+                {{-- Just the icon on phones, so the header stays on one line; screen readers still hear "Dashboard". --}}
+                <x-widget.button :href="route('dashboard')" size="sm" icon-start="inbox"><span class="sr-only sm:not-sr-only">Dashboard</span></x-widget.button>
                 <x-account-menu />
             @else
                 <x-widget.button :href="route('login')" variant="neutral" size="sm">Sign in</x-widget.button>

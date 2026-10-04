@@ -1,5 +1,5 @@
 <x-layouts.app title="Settings" :breadcrumbs="[
-    ['label' => 'Dashboard', 'href' => route('dashboard'), 'icon' => 'home', 'iconOnly' => true],
+    ['label' => 'Dashboard', 'href' => route('dashboard'), 'icon' => 'inbox', 'iconOnly' => true],
     'Settings',
 ]">
     <div class="max-w-2xl space-y-6">
