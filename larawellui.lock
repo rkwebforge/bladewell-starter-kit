@@ -30,7 +30,7 @@
         "resources/views/components/widget/dropdown/index.blade.php": "c7dea913230344fc384c91cbd2e0da9e6cd94797865dc90e33c64214f36a88f6",
         "resources/views/components/widget/dropdown/item.blade.php": "6449be3aae5f4b8b0713377f2d91727b37a7c1d47e958a99037321a5f2b7ad8a",
         "resources/views/components/widget/field/index.blade.php": "08382fe0a1fc6039e19defdf3936f46a40244403cfd8a8a53446c88d67fbcf75",
-        "resources/views/components/widget/icon/index.blade.php": "676b995478bba6fbf4487404ef6580a3ebf8093041cebde1581578dc1f040c20",
+        "resources/views/components/widget/icon/index.blade.php": "0ec15d81d5b1f30a2910eb83608c389ab005a44cbdc91c6ee8409b52afd55756",
         "resources/views/components/widget/modal/index.blade.php": "5e22b21b61f9c59d360b0fb5e2a6f3177a544cdae16b7595203cf9f4c071f75f",
         "resources/views/components/widget/pagination/drawer.blade.php": "e458770fbace65a8a64cfacbaff4b9333e766900ceaa9b97cbbc98c91a42078d",
         "resources/views/components/widget/pagination/footer.blade.php": "3416ed66b8bd4ee9a3a168c5d32df57f52a19059b19ffd2a372de640158e5da4",
