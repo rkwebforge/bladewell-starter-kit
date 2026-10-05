@@ -6920,16 +6920,16 @@
         },
         {
             "name": "larawellui/larawellui",
-            "version": "v0.2.2",
+            "version": "v0.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rkwebforge/larawellui.git",
-                "reference": "c74085a4cdcde1c8c0aa5bae9d06a5d98a143533"
+                "reference": "e8e040cee123f5a4c801cfcea00ad562218e446a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rkwebforge/larawellui/zipball/c74085a4cdcde1c8c0aa5bae9d06a5d98a143533",
-                "reference": "c74085a4cdcde1c8c0aa5bae9d06a5d98a143533",
+                "url": "https://api.github.com/repos/rkwebforge/larawellui/zipball/e8e040cee123f5a4c801cfcea00ad562218e446a",
+                "reference": "e8e040cee123f5a4c801cfcea00ad562218e446a",
                 "shasum": ""
             },
             "require": {
@@ -6980,7 +6980,7 @@
                 "issues": "https://github.com/rkwebforge/larawellui-site/issues",
                 "source": "https://github.com/rkwebforge/larawellui"
             },
-            "time": "2026-10-04T11:22:24+00:00"
+            "time": "2026-10-04T18:25:52+00:00"
         },
         {
             "name": "mockery/mockery",
