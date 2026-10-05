@@ -10,4 +10,5 @@ import './widget/search';
 import './widget/select';
 import './widget/table';
 import './widget/toast';
+import './widget/accordion';
 import './theme';

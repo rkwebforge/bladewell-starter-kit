@@ -4,7 +4,7 @@
 ]">
     <div class="max-w-2xl space-y-6">
         <section aria-labelledby="profile-heading" class="bg-surface border-line rounded-2xl border p-6">
-            <h2 id="profile-heading" class="text-lg font-semibold">Profile</h2>
+            <h2 id="profile-heading" class="scroll-mt-12 text-lg font-semibold">Profile</h2>
             <p class="text-muted mt-1 text-sm">Your name and the address you sign in with. Changing the address asks you to verify it again.</p>
 
             <form method="POST" action="{{ route('profile.update') }}" class="mt-6 space-y-5">
@@ -19,7 +19,7 @@
         </section>
 
         <section aria-labelledby="password-heading" class="bg-surface border-line rounded-2xl border p-6">
-            <h2 id="password-heading" class="text-lg font-semibold">Password</h2>
+            <h2 id="password-heading" class="scroll-mt-12 text-lg font-semibold">Password</h2>
             <p class="text-muted mt-1 text-sm">Use a long password you don't use anywhere else.</p>
 
             <form method="POST" action="{{ route('password.update') }}" class="mt-6 space-y-5">
@@ -35,14 +35,14 @@
         </section>
 
         <section aria-labelledby="devices-heading" class="bg-surface border-line rounded-2xl border p-6">
-            <h2 id="devices-heading" class="text-lg font-semibold">Other devices</h2>
+            <h2 id="devices-heading" class="scroll-mt-12 text-lg font-semibold">Other devices</h2>
             <p class="text-muted mt-1 text-sm">Signed in somewhere you no longer use, or see a sign-in on your dashboard that wasn't you? Sign out everywhere except here.</p>
 
             <x-widget.button variant="secondary" icon-start="log-out" data-modal-open="other-devices" class="mt-6">Sign out other devices</x-widget.button>
         </section>
 
         <section aria-labelledby="delete-heading" class="bg-surface border-error/30 rounded-2xl border p-6">
-            <h2 id="delete-heading" class="text-lg font-semibold">Delete account</h2>
+            <h2 id="delete-heading" class="scroll-mt-12 text-lg font-semibold">Delete account</h2>
             <p class="text-muted mt-1 text-sm">Removes your account and everything in it, for good.</p>
 
             <x-widget.button variant="danger" icon-start="trash" data-modal-open="delete-account" class="mt-6">Delete account</x-widget.button>

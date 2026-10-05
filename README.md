@@ -28,7 +28,7 @@ To try it with data, run `php artisan db:seed`: it creates `test@example.com` (p
 | Forgot / reset password | `/forgot-password`, `/reset-password/{token}` | text-input, password, button, alert |
 | Verify email | `/verify-email` | button, alert |
 | Confirm password | `/confirm-password` | password, button |
-| Dashboard: your sign-in history | `/dashboard` | table (sortable, paginated, cards on phones), alert, dropdown account menu |
+| Dashboard: your sign-in history | `/dashboard` | table (sortable, paginated, cards on phones), alert, dropdown account menu, accordion menu sidebar on large screens |
 | Settings | `/settings/profile` | text-input, password, button, breadcrumbs, modal (other devices, delete account), toast |
 
 New accounts verify their email before reaching the dashboard; in development the link is written to `storage/logs/laravel.log` (`MAIL_MAILER=log`). To skip verification, remove `implements MustVerifyEmail` from `app/Models/User.php`.
@@ -49,7 +49,7 @@ app/Http/Controllers/Settings/          profile, password, other devices
 app/Http/Middleware/SecurityHeaders.php the Content Security Policy and other browser security headers
 app/Listeners/RecordSignIn.php          keeps the sign-in history
 config/security.php                     every security setting, explained
-resources/views/components/layouts/     app (header and account menu) and guest (centred card)
+resources/views/components/layouts/     app (sidebar on large screens, header and account menu) and guest (centred card)
 resources/views/auth/                   the auth pages
 resources/views/components/theme-toggle.blade.php   the Light / Dark / System menu
 resources/js/theme.js, theme-boot.js    switching the theme, and applying it before the page is drawn
