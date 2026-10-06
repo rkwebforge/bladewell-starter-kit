@@ -2,6 +2,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## Unreleased
+
+The kit is now a starting point rather than a finished app: a home page, the widgets it uses, the theme menu, error pages and the security headers, with no accounts or database.
+
+- Sign in, registration, password reset, email verification, the dashboard and the settings page are gone, with their controllers, models, migrations and tests. So are the widgets only they used; `php artisan bladewell:add` brings any of them back.
+- Nothing needs a database: sessions and the cache are kept in files, the queue runs straight away, and `composer create-project` no longer runs migrations.
+- The home page links to the widget catalogue in a new tab, and has two prompts to copy into your AI agent: a login page and a sign-up page, with working sign-in and sign-up.
+- `config/security.php` no longer has the `registration`, `passwords` and `sign_in_history_days` settings. `SECURITY.md` lists what to cover when you add accounts.
+
 ## 2026.10.3
 
 Built on Bladewell 0.3.0.
