@@ -39,12 +39,12 @@
         <section class="mx-auto max-w-3xl py-12 text-center sm:py-20 lg:py-24">
             <h1 class="text-3xl font-semibold tracking-tight text-balance sm:text-5xl">Your Laravel app starts here</h1>
             <p class="text-muted mx-auto mt-4 max-w-xl text-base text-pretty sm:text-lg">
-                Sign in, registration, password reset, email verification and settings, built from LarawellUI widgets.
+                Sign in, registration, password reset, email verification and settings, built from Bladewell widgets.
                 Plain Blade and a little vanilla JS: no React, Vue or Alpine.
             </p>
             <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <x-widget.button :href="route('dashboard')" size="lg" icon-end="arrow-right">See the dashboard</x-widget.button>
-                <x-widget.button href="https://larawellui.wasmer.app" variant="tertiary" size="lg" icon-end="external-link">Browse the widgets</x-widget.button>
+                <x-widget.button href="https://www.bladewellui.com" variant="tertiary" size="lg" icon-end="external-link">Browse the widgets</x-widget.button>
             </div>
             @guest
                 <p class="text-muted mt-3 text-sm">You'll be asked to sign in first.</p>
