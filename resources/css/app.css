@@ -9,7 +9,7 @@
 @source '../../storage/framework/views/*.php';
 
 
-/* The dotted page background, as behind the previews on the LarawellUI site. Its colours are theme tokens, so it
+/* The dotted page background, as behind the previews on the Bladewell site. Its colours are theme tokens, so it
    follows dark mode; change the 18px to space the dots out. */
 @utility bg-dots {
     background-color: var(--color-surface);

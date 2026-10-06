@@ -2,6 +2,13 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.3
+
+Built on Bladewell 0.3.0.
+
+- LarawellUI is now **Bladewell**. The kit is `bladewell/starter-kit` and requires `bladewell/bladewell`. The widget commands are `php artisan bladewell:add | list | diff | mcp`, the lock file is `bladewell.lock`, and the MCP server in `.mcp.json` is `bladewell`. The widgets look and work as before.
+- To move an app built from an earlier release: rename `larawellui.lock` to `bladewell.lock` first, then `composer remove --dev larawellui/larawellui && composer require --dev bladewell/bladewell`, and change `larawell:mcp` to `bladewell:mcp` in `.mcp.json`.
+
 ## 2026.10.2
 
 Built on LarawellUI 0.2.3.
