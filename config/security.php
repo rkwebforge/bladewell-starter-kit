@@ -11,26 +11,6 @@ declare(strict_types=1);
 return [
 
     /*
-    | Whether anyone can create an account at /register. Turn it off for invite-only or company-internal apps; the
-    | links to it disappear and the page answers 404.
-    */
-    'registration' => (bool) env('REGISTRATION_ENABLED', true),
-
-    'passwords' => [
-        // Length is what makes a password hard to guess; 12 is the floor current guidance (NIST SP 800-63B) suggests
-        // for accounts without two-factor sign-in. The register and settings pages show these rules as you type.
-        'min' => 12,
-        'mixed_case' => false,
-        'numbers' => false,
-        'symbols' => false,
-
-        // Rejects passwords found in known data breaches, in production only. It asks the Have I Been Pwned API
-        // with the first 5 characters of the password's SHA-1 hash, so the password itself never leaves your
-        // server. Turn it off if your server can't reach the internet.
-        'check_breached' => (bool) env('PASSWORD_CHECK_BREACHED', true),
-    ],
-
-    /*
     | Content Security Policy: which places your pages may load scripts, styles, images and so on from. It's the main
     | defence against cross-site scripting (XSS): even if an attacker gets markup into a page, the browser won't run
     | a script that isn't from your own domain or doesn't carry this request's nonce.
@@ -74,8 +54,5 @@ return [
         'enabled' => (bool) env('HSTS_ENABLED', true),
         'max_age' => 31536000,
     ],
-
-    // How long sign-in history is kept before `php artisan model:prune` (scheduled daily) deletes it.
-    'sign_in_history_days' => 90,
 
 ];
