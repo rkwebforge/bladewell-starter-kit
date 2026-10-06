@@ -7,11 +7,11 @@
                 "boost:mcp"
             ]
         },
-        "larawellui": {
+        "bladewell": {
             "command": "php",
             "args": [
                 "artisan",
-                "larawell:mcp"
+                "bladewell:mcp"
             ]
         }
     }
