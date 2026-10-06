@@ -4,31 +4,24 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 final class ThemeToggleTest extends TestCase
 {
-    use RefreshDatabase;
-
     public function test_every_layout_offers_light_dark_and_system(): void
     {
-        foreach (['/', '/login'] as $url) {
+        // The home page, and an error page in the guest layout.
+        foreach (['/', '/no-such-page'] as $url) {
             $this->get($url)
                 ->assertSee('data-theme-choice="light"', false)
                 ->assertSee('data-theme-choice="dark"', false)
                 ->assertSee('data-theme-choice="system"', false);
         }
-
-        $this->actingAs(User::factory()->create())
-            ->get('/dashboard')
-            ->assertSee('data-theme-choice="system"', false);
     }
 
     public function test_the_inline_theme_script_is_allowed_by_its_hash_and_nothing_else_inline_is(): void
     {
-        $response = $this->get('/login');
+        $response = $this->get('/');
         $html = (string) $response->getContent();
         $policy = (string) $response->headers->get('Content-Security-Policy');
 

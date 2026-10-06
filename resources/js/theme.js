@@ -1,5 +1,5 @@
-// The theme menu: Light, Dark or System (follows the device). The choice is kept in this browser's localStorage, and
-// theme-boot.js applies it on the next page before anything is drawn.
+// The theme menu: Light, Dark or System (follows the device). Dark until someone picks another. The choice is kept in
+// this browser's localStorage, and theme-boot.js applies it on the next page before anything is drawn.
 const KEY = 'theme';
 const deviceIsDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -7,12 +7,12 @@ function saved() {
     try {
         return localStorage.getItem(KEY);
     } catch {
-        return null; // Storage blocked (some private modes): follow the device.
+        return null; // Storage blocked (some private modes): the default, dark.
     }
 }
 
 function apply(theme) {
-    const choice = theme === 'light' || theme === 'dark' ? theme : 'system';
+    const choice = theme === 'light' || theme === 'system' ? theme : 'dark';
     const dark = choice === 'dark' || (choice === 'system' && deviceIsDark.matches);
     document.documentElement.classList.toggle('dark', dark);
 
@@ -50,7 +50,7 @@ document.addEventListener('click', (event) => {
     }
     const choice = item.dataset.themeChoice;
     try {
-        choice === 'system' ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, choice);
+        localStorage.setItem(KEY, choice);
     } catch {
         // Not saved, but this page still switches.
     }
