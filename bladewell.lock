@@ -1,5 +1,5 @@
 {
-    "_readme": "Written by php artisan larawell:add. Lets a re-run update files you have not edited. Commit it.",
+    "_readme": "Written by php artisan bladewell:add. Lets a re-run update files you have not edited. Commit it.",
     "files": {
         "app/View/Widget/ElementIds.php": "f658300dd5c60fb663d99a03851ffc8942912cef05efba65b0aabddfff71993d",
         "app/View/Widget/FormField.php": "815566ae71bc72af1a3a1ed9e4d591eae1ed3ea3ded4b25f75ac432f0d442030",
@@ -19,7 +19,7 @@
         "resources/js/widget/toast/index.js": "5b8487be54b710b9adaa7a10ca5f5b7040bb94c15adf07cee2b51bf5d591b2d9",
         "resources/views/components/widget/accordion/index.blade.php": "a8d5208ca914bd86e78233bf9eff0c82318931b2def430b1811a0797f8832fbe",
         "resources/views/components/widget/accordion/menu-item.blade.php": "34b15449d33e8772d00c996349ed7d6093fcc1f689eca42de4387774b7dddd19",
-        "resources/views/components/widget/accordion/menu.blade.php": "b344b1f1c33f66af038c8b7056b27882a4cb12f2fbdf3335a3cdedbf2bb6c7eb",
+        "resources/views/components/widget/accordion/menu.blade.php": "e1747785aab63070e15bc311b20c9cc511b17b6771551d5173260a040263c5bd",
         "resources/views/components/widget/alert/errors.blade.php": "853bd324a1a2c46a9946bdb371f01ab734ea30e7f9a6ac4eae5f2b31b81af636",
         "resources/views/components/widget/alert/index.blade.php": "fdad7b69919db9fedb701cd4af9abd166ff7f5ef4853919cda03845aceeacfa0",
         "resources/views/components/widget/breadcrumbs/index.blade.php": "76c69854daf7a0cef7a1c39d36571ad3f86714656190d61cbd9af39c934ebc51",
@@ -30,7 +30,7 @@
         "resources/views/components/widget/dropdown/index.blade.php": "c7dea913230344fc384c91cbd2e0da9e6cd94797865dc90e33c64214f36a88f6",
         "resources/views/components/widget/dropdown/item.blade.php": "6449be3aae5f4b8b0713377f2d91727b37a7c1d47e958a99037321a5f2b7ad8a",
         "resources/views/components/widget/field/index.blade.php": "08382fe0a1fc6039e19defdf3936f46a40244403cfd8a8a53446c88d67fbcf75",
-        "resources/views/components/widget/icon/index.blade.php": "0ec15d81d5b1f30a2910eb83608c389ab005a44cbdc91c6ee8409b52afd55756",
+        "resources/views/components/widget/icon/index.blade.php": "e075be46d8a9bd51259ba63088f056c54c8c76c4771da9aaa16a704a6192e8f6",
         "resources/views/components/widget/modal/index.blade.php": "5e22b21b61f9c59d360b0fb5e2a6f3177a544cdae16b7595203cf9f4c071f75f",
         "resources/views/components/widget/pagination/drawer.blade.php": "e458770fbace65a8a64cfacbaff4b9333e766900ceaa9b97cbbc98c91a42078d",
         "resources/views/components/widget/pagination/footer.blade.php": "3416ed66b8bd4ee9a3a168c5d32df57f52a19059b19ffd2a372de640158e5da4",

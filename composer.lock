@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38349cecad3245133aabe08239102c7f",
+    "content-hash": "32551c56f3ab1cf0068ff67eed51c241",
     "packages": [
         {
             "name": "brick/math",
@@ -6154,6 +6154,70 @@
     ],
     "packages-dev": [
         {
+            "name": "bladewell/bladewell",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rkwebforge/bladewell.git",
+                "reference": "590b5e1454c8c46a5755e85059d3f457599d501d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rkwebforge/bladewell/zipball/590b5e1454c8c46a5755e85059d3f457599d501d",
+                "reference": "590b5e1454c8c46a5755e85059d3f457599d501d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^12.0|^13.0",
+                "illuminate/filesystem": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "php": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bladewell\\BladewellServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bladewell\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Krishnaprasad R",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Copy-paste Blade + Tailwind v4 widgets for Laravel. The installer copies the source into your app; you own it from there.",
+            "homepage": "https://www.bladewellui.com",
+            "keywords": [
+                "Forms",
+                "blade",
+                "blade-components",
+                "components",
+                "datepicker",
+                "laravel",
+                "livewire",
+                "tailwindcss",
+                "ui-components",
+                "widgets"
+            ],
+            "support": {
+                "docs": "https://www.bladewellui.com/docs/installation",
+                "issues": "https://github.com/rkwebforge/bladewell-site/issues",
+                "source": "https://github.com/rkwebforge/bladewell"
+            },
+            "time": "2026-10-06T08:31:00+00:00"
+        },
+        {
             "name": "composer/semver",
             "version": "3.5.0",
             "source": {
@@ -6917,70 +6981,6 @@
                 "source": "https://github.com/laravel/roster"
             },
             "time": "2026-07-18T17:53:15+00:00"
-        },
-        {
-            "name": "larawellui/larawellui",
-            "version": "v0.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rkwebforge/larawellui.git",
-                "reference": "e8e040cee123f5a4c801cfcea00ad562218e446a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rkwebforge/larawellui/zipball/e8e040cee123f5a4c801cfcea00ad562218e446a",
-                "reference": "e8e040cee123f5a4c801cfcea00ad562218e446a",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^12.0|^13.0",
-                "illuminate/filesystem": "^12.0|^13.0",
-                "illuminate/support": "^12.0|^13.0",
-                "php": "^8.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LarawellUi\\LarawellUiServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LarawellUi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Krishnaprasad R",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Copy-paste Blade + Tailwind v4 widgets for Laravel. The installer copies the source into your app; you own it from there.",
-            "homepage": "https://larawellui.wasmer.app",
-            "keywords": [
-                "Forms",
-                "blade",
-                "blade-components",
-                "components",
-                "datepicker",
-                "laravel",
-                "livewire",
-                "tailwindcss",
-                "ui-components",
-                "widgets"
-            ],
-            "support": {
-                "docs": "https://larawellui.wasmer.app/docs/installation",
-                "issues": "https://github.com/rkwebforge/larawellui-site/issues",
-                "source": "https://github.com/rkwebforge/larawellui"
-            },
-            "time": "2026-10-04T18:25:52+00:00"
         },
         {
             "name": "mockery/mockery",

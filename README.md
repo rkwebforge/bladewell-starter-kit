@@ -1,19 +1,19 @@
-# LarawellUI Starter Kit
+# Bladewell Starter Kit
 
-A Laravel starter kit with sign in, registration, password reset, email verification and account settings, built from [LarawellUI](https://larawellui.wasmer.app) widgets.
+A Laravel starter kit with sign in, registration, password reset, email verification and account settings, built from [Bladewell](https://www.bladewellui.com) widgets.
 
 Plain Blade and a small vanilla JS module per widget: no React, Vue, Inertia or Alpine. Works under a strict Content Security Policy.
 
 ## Start a new app
 
 ```bash
-composer create-project larawellui/starter-kit my-app
+composer create-project bladewell/starter-kit my-app
 cd my-app
 npm install && npm run build
 composer run dev
 ```
 
-With the Laravel installer, `laravel new my-app --using=larawellui/starter-kit` does the same first step. (No `laravel` command? `composer global require laravel/installer` installs it.)
+With the Laravel installer, `laravel new my-app --using=bladewell/starter-kit` does the same first step. (No `laravel` command? `composer global require laravel/installer` installs it.)
 
 It uses SQLite by default. For MySQL, set the `DB_*` values in `.env`, then run `php artisan migrate`.
 
@@ -53,9 +53,9 @@ resources/views/components/layouts/     app (sidebar on large screens, header an
 resources/views/auth/                   the auth pages
 resources/views/components/theme-toggle.blade.php   the Light / Dark / System menu
 resources/js/theme.js, theme-boot.js    switching the theme, and applying it before the page is drawn
-resources/views/components/widget/      LarawellUI widgets: yours to edit
+resources/views/components/widget/      Bladewell widgets: yours to edit
 resources/js/widget/, resources/css/widget/
-larawellui.lock                         which widget files you've edited; commit it
+bladewell.lock                         which widget files you've edited; commit it
 ```
 
 ## Widgets
@@ -63,34 +63,34 @@ larawellui.lock                         which widget files you've edited; commit
 The widgets are copied into your app, so you can change them freely. To add more:
 
 ```bash
-php artisan larawell:list
-php artisan larawell:add datepicker
+php artisan bladewell:list
+php artisan bladewell:add datepicker
 ```
 
 ### Keeping widgets up to date
 
-Your app keeps the widgets exactly as they were when you created it; nothing changes behind your back. New LarawellUI releases bring fixes and new widgets, and you take them when you choose:
+Your app keeps the widgets exactly as they were when you created it; nothing changes behind your back. New Bladewell releases bring fixes and new widgets, and you take them when you choose:
 
 ```bash
-composer require --dev larawellui/larawellui:^0.3   # move to the new release (the version from its changelog)
-php artisan larawell:add --installed                # update the widget files you haven't edited
-php artisan larawell:diff                           # see what changed in the ones you have
-php artisan larawell:add new-widget                 # add a widget that's new in that release
+composer require --dev bladewell/bladewell:^0.3   # move to the new release (the version from its changelog)
+php artisan bladewell:add --installed                # update the widget files you haven't edited
+php artisan bladewell:diff                           # see what changed in the ones you have
+php artisan bladewell:add new-widget                 # add a widget that's new in that release
 ```
 
-`larawell:add --installed` never overwrites a file you've edited: it reports it, and `larawell:diff` shows the difference so you can merge by hand. `larawellui.lock` is how it tells them apart, so commit it.
+`bladewell:add --installed` never overwrites a file you've edited: it reports it, and `bladewell:diff` shows the difference so you can merge by hand. `bladewell.lock` is how it tells them apart, so commit it.
 
-While LarawellUI is below 1.0, `composer update` alone stays within the minor version you have: `^0.2.1` gets 0.2.x fixes but never 0.3.0, as Composer treats each 0.x minor release as possibly breaking. That's why the first command names the version. Read the [changelog](https://github.com/rkwebforge/larawellui/blob/main/CHANGELOG.md) for the widgets you use before moving.
+While Bladewell is below 1.0, `composer update` alone stays within the minor version you have: `^0.2.1` gets 0.2.x fixes but never 0.3.0, as Composer treats each 0.x minor release as possibly breaking. That's why the first command names the version. Read the [changelog](https://github.com/rkwebforge/bladewell/blob/main/CHANGELOG.md) for the widgets you use before moving.
 
 ## AI agents
 
 The kit is ready for AI coding agents (Claude Code, Codex, Cursor, Copilot and others):
 
 - **[Laravel Boost](https://github.com/laravel/boost)** gives them this app's Laravel version, database schema, logs, errors and version-matched Laravel docs, through its MCP server (`php artisan boost:mcp`).
-- **`php artisan larawell:mcp`** lets them look up every widget's props and examples, and install widgets.
+- **`php artisan bladewell:mcp`** lets them look up every widget's props and examples, and install widgets.
 - **`CLAUDE.md` and `AGENTS.md`** tell them how to work here: the kit's rules (widgets, the Content Security Policy, `config/security.php`, tests) and a careful working style.
 
-Claude Code finds both MCP servers in `.mcp.json` by itself. For another agent, run `php artisan boost:install` and pick it: Boost writes that agent's MCP settings and instructions file; add `larawellui` (`php artisan larawell:mcp`) next to `laravel-boost` there. `CLAUDE.md` and `AGENTS.md` are generated, so write your own rules in `.ai/guidelines/`, then run `php artisan boost:update`.
+Claude Code finds both MCP servers in `.mcp.json` by itself. For another agent, run `php artisan boost:install` and pick it: Boost writes that agent's MCP settings and instructions file; add `bladewell` (`php artisan bladewell:mcp`) next to `laravel-boost` there. `CLAUDE.md` and `AGENTS.md` are generated, so write your own rules in `.ai/guidelines/`, then run `php artisan boost:update`.
 
 Commit these files: they're the project's instructions, so every agent and every teammate works by the same rules, and changes to them get reviewed like code. Your personal ones stay out of git: `CLAUDE.local.md`, `.claude/settings.local.json`, `.codex/` and `.cursor/` are in `.gitignore`. Never put API keys in `.mcp.json`; use environment variables.
 
