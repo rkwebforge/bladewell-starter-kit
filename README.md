@@ -21,7 +21,7 @@ Sessions and the cache are kept in files, so there's no database to set up. `.en
 
 - **A home page** with a link to the widget catalogue and two prompts to copy into your agent: a login page and a sign-up page. Each tells the agent to set up the database and the `User` model if the app has none yet, build the page with working sign-in or sign-up, and install the widgets it uses.
 - **The widgets the page needs:** button, icon, dropdown (the theme menu) and modal (which the dropdown uses). Add any other with `php artisan bladewell:add`.
-- **A Light / Dark / System theme menu**, applied before the page is drawn.
+- **A Light / Dark / System theme menu**, dark until someone picks another, applied before the page is drawn.
 - **Error pages** that say what happened in plain words, with a way home.
 - **Browser security headers**, a strict Content Security Policy included.
 
