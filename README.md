@@ -78,7 +78,7 @@ The kit is ready for AI coding agents (Claude Code, Codex, Cursor, Copilot and o
 
 - **[Laravel Boost](https://github.com/laravel/boost)** gives them this app's Laravel version, logs, errors, database schema (once it has one) and version-matched Laravel docs, through its MCP server (`php artisan boost:mcp`).
 - **`php artisan bladewell:mcp`** lets them look up every widget's props and examples, and install widgets.
-- **`CLAUDE.md` and `AGENTS.md`** tell them how to work here: the kit's rules (widgets, the Content Security Policy, `config/security.php`, tests) and a careful working style.
+- **`CLAUDE.md` and `AGENTS.md`** tell them how to work here: the kit's rules (the Content Security Policy, `config/security.php`, tests), a careful working style, and Bladewell's own rules for its widgets, which come with the package (`bladewell/bladewell` is listed under `packages` in `boost.json`, so `php artisan boost:update` keeps them current).
 
 Claude Code finds both MCP servers in `.mcp.json` by itself. For another agent, run `php artisan boost:install` and pick it: Boost writes that agent's MCP settings and instructions file; add `bladewell` (`php artisan bladewell:mcp`) next to `laravel-boost` there. `CLAUDE.md` and `AGENTS.md` are generated, so write your own rules in `.ai/guidelines/`, then run `php artisan boost:update`.
 

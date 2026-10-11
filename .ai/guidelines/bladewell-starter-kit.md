@@ -4,13 +4,8 @@ This app was built from the Bladewell starter kit: Blade pages, Tailwind CSS v4 
 
 ## Widgets
 
-- The UI is built from Bladewell widgets, used as `<x-widget.*>` components. Before writing UI, look for a widget that does the job: `php artisan bladewell:list`, or the `bladewell` MCP server's `list_components` and `get_component` tools for props and examples.
-- Add a widget with `php artisan bladewell:add {name}`. Never copy widget files by hand: the command also adds what the widget needs and records it in `bladewell.lock`.
-- Widget files (`resources/views/components/widget/`, `resources/js/widget/`, `resources/css/widget/`, `app/View/Widget/`) belong to the app and may be edited, but an edited file is no longer updated by `php artisan bladewell:add --installed`. Prefer props, slots and classes on the component over editing its files.
+- How to find, add and use the widgets is in the Bladewell rules below, from the `bladewell/bladewell` package. In this app the widget files are in `resources/views/components/widget/`, `resources/js/widget/`, `resources/css/widget/` and `app/View/Widget/`.
 - Laravel Pint leaves widget files as they are, but don't run Prettier or another formatter over them: a reformatted file counts as edited and stops getting updates.
-- Widget JavaScript is vanilla, hooked onto `data-*` attributes. Don't add Alpine, jQuery or a framework.
-- A field that shows a value the person may not change takes `readonly`, not `disabled`: a disabled field isn't submitted, can't be focused and isn't read out.
-- An action that needs "Are you sure?" (a delete, say) takes `confirm="…"` on its `<x-widget.button>`, rather than a script of its own.
 
 ## Security
 
