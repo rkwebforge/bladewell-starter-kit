@@ -2,6 +2,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.5
+
+Built on Bladewell 1.1.0.
+
+- The kit requires `bladewell/bladewell:^1.1`. It required `^0.3`, which Composer never moves past 0.3, so a new app's `php artisan bladewell:add` brought widgets from 0.3.0. It now brings 1.1's: a colour picker, tags, a slider, trees, popovers and a command palette among the new ones, and `readonly` on the form controls, `confirm` on buttons and a shared row menu for long tables. See the [Bladewell changelog](https://github.com/rkwebforge/bladewell/blob/main/CHANGELOG.md).
+- The button, dropdown, modal and icon widgets are updated to 1.1.0. The theme menu and the buttons look and work as before.
+- The agent guidelines say to use `readonly` rather than `disabled` for a value that can't be changed, and `confirm="…"` on a button for "Are you sure?".
+- The README's update steps are for 1.x: `composer update bladewell/bladewell` takes every 1.x release. An app made from an earlier kit moves with `composer require --dev bladewell/bladewell:^1.1`.
+
 ## 2026.10.4
 
 Built on Bladewell 0.3.0.

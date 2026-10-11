@@ -12,6 +12,8 @@ This app was built from the Bladewell starter kit: Blade pages, Tailwind CSS v4 
 - Widget files (`resources/views/components/widget/`, `resources/js/widget/`, `resources/css/widget/`, `app/View/Widget/`) belong to the app and may be edited, but an edited file is no longer updated by `php artisan bladewell:add --installed`. Prefer props, slots and classes on the component over editing its files.
 - Laravel Pint leaves widget files as they are, but don't run Prettier or another formatter over them: a reformatted file counts as edited and stops getting updates.
 - Widget JavaScript is vanilla, hooked onto `data-*` attributes. Don't add Alpine, jQuery or a framework.
+- A field that shows a value the person may not change takes `readonly`, not `disabled`: a disabled field isn't submitted, can't be focused and isn't read out.
+- An action that needs "Are you sure?" (a delete, say) takes `confirm="…"` on its `<x-widget.button>`, rather than a script of its own.
 
 ## Security
 
