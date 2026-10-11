@@ -2,6 +2,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.6
+
+Built on Bladewell 1.2.0.
+
+- Your agent's rules (`CLAUDE.md`, `AGENTS.md`) now take Bladewell's widget rules from the package itself: `boost.json` lists `bladewell/bladewell` under `packages`, so `php artisan boost:update` brings each release's rules. Besides what the kit said before, they cover form errors, toasts, the shared row menu for long tables, the widgets' script APIs and dates.
+- The kit's own guideline keeps only what is particular to the kit: where the widget files are, the Content Security Policy, `config/security.php` and tests.
+- An app made from an earlier kit gets the same with `composer require --dev bladewell/bladewell:^1.2`, then `php artisan boost:update`, ticking `bladewell/bladewell` when asked.
+
 ## 2026.10.5
 
 Built on Bladewell 1.1.0.
