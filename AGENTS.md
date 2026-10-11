@@ -7,13 +7,8 @@ This app was built from the Bladewell starter kit: Blade pages, Tailwind CSS v4 
 
 ## Widgets
 
-- The UI is built from Bladewell widgets, used as `<x-widget.*>` components. Before writing UI, look for a widget that does the job: `php artisan bladewell:list`, or the `bladewell` MCP server's `list_components` and `get_component` tools for props and examples.
-- Add a widget with `php artisan bladewell:add {name}`. Never copy widget files by hand: the command also adds what the widget needs and records it in `bladewell.lock`.
-- Widget files (`resources/views/components/widget/`, `resources/js/widget/`, `resources/css/widget/`, `app/View/Widget/`) belong to the app and may be edited, but an edited file is no longer updated by `php artisan bladewell:add --installed`. Prefer props, slots and classes on the component over editing its files.
+- How to find, add and use the widgets is in the Bladewell rules below, from the `bladewell/bladewell` package. In this app the widget files are in `resources/views/components/widget/`, `resources/js/widget/`, `resources/css/widget/` and `app/View/Widget/`.
 - Laravel Pint leaves widget files as they are, but don't run Prettier or another formatter over them: a reformatted file counts as edited and stops getting updates.
-- Widget JavaScript is vanilla, hooked onto `data-*` attributes. Don't add Alpine, jQuery or a framework.
-- A field that shows a value the person may not change takes `readonly`, not `disabled`: a disabled field isn't submitted, can't be focused and isn't read out.
-- An action that needs "Are you sure?" (a delete, say) takes `confirm="…"` on its `<x-widget.button>`, rather than a script of its own.
 
 ## Security
 
@@ -247,5 +242,21 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - Run the narrowest set of tests that covers the change. Pass a file path or `--filter=testName` to `php artisan test --compact`.
 - Rerun a test after each change to it.
 - Run `vendor/bin/phpunit` to call the test runner directly. It accepts the same file path and `--filter=testName` arguments.
+
+=== bladewell/bladewell/core rules ===
+
+# Bladewell
+
+Bladewell widgets are Blade components, each with a small vanilla JS module, copied into this app by `php artisan bladewell:add`. The copied files belong to the app.
+
+- Build UI from `<x-widget.*>` components before writing markup of your own. Find one with `php artisan bladewell:list`, or the `bladewell` MCP server's `list_components` and `get_component` tools, which give a widget's props, examples and usage notes (such as the endpoint a search or tree calls).
+- Add a widget with `php artisan bladewell:add {name}`: it also copies what the widget needs and records it in `bladewell.lock`. Never copy widget files by hand. `php artisan bladewell:add --installed` updates them, but leaves alone any file that was edited, so prefer props, slots and classes over editing a widget, and don't reformat its files.
+- Widget JavaScript hooks onto `data-*` attributes and works under a strict Content Security Policy: don't add Alpine, jQuery, inline `<script>`, `onclick=""` or `style=""`.
+- Form controls take `name` (or `wire:model`), `label` and `info`, and show the validation error for their name themselves: don't add `@error` markup. Use `readonly`, not `disabled`, for a value that is shown and submitted but can't be changed; a disabled control isn't submitted.
+- For "Are you sure?", put `confirm="…"` on `<x-widget.button>` or `<x-widget.dropdown.item>` rather than writing a script.
+- Toasts: `return back()->with('success', 'Saved.')` from a controller, `$this->dispatch('toast', type: 'success', message: 'Saved.')` from Livewire, `data-toast="success" data-toast-message="Saved."` on a clickable element, or `toast.success('Saved.')` in a script. The layout needs `<x-widget.toast />` once.
+- In a long table, render the row menu once, `<x-widget.dropdown.menu id="order-actions">`, and give each row only its trigger, `<x-widget.dropdown menu="order-actions" :values="['id' => $order->id]" />`, with `:id` placeholders in the menu's links: `route('orders.edit', ':id')`.
+- Scripts reach widgets through `window.modal`, `window.toast`, `window.dropdown`, `window.popover`, `window.tabs` and the others, by id or element.
+- The date picker submits `Y-m-d` and stops at today unless given `:max="false"`. Validate past dates with `new \App\Rules\NotAfterToday`, not `before_or_equal:today`, which uses the server's UTC date.
 
 </laravel-boost-guidelines>
