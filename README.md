@@ -62,15 +62,15 @@ php artisan bladewell:add datepicker
 Your app keeps the widgets exactly as they were when you created it; nothing changes behind your back. New Bladewell releases bring fixes and new widgets, and you take them when you choose:
 
 ```bash
-composer require --dev bladewell/bladewell:^0.3   # move to the new release (the version from its changelog)
-php artisan bladewell:add --installed                # update the widget files you haven't edited
-php artisan bladewell:diff                           # see what changed in the ones you have
-php artisan bladewell:add new-widget                 # add a widget that's new in that release
+composer update bladewell/bladewell     # move to the newest 1.x release
+php artisan bladewell:add --installed   # update the widget files you haven't edited
+php artisan bladewell:diff              # see what changed in the ones you have
+php artisan bladewell:add new-widget    # add a widget that's new in that release
 ```
 
 `bladewell:add --installed` never overwrites a file you've edited: it reports it, and `bladewell:diff` shows the difference so you can merge by hand. `bladewell.lock` is how it tells them apart, so commit it.
 
-While Bladewell is below 1.0, `composer update` alone stays within the minor version you have: `^0.2.1` gets 0.2.x fixes but never 0.3.0, as Composer treats each 0.x minor release as possibly breaking. That's why the first command names the version. Read the [changelog](https://github.com/rkwebforge/bladewell/blob/main/CHANGELOG.md) for the widgets you use before moving.
+Since 1.0, Bladewell only adds within a major version: component names, props, `data-*` hooks and commands are never renamed or removed, so `composer update` takes every 1.x release. An app made from a kit before 2026.10.5 requires `^0.3`, which never goes past 0.3: move it with `composer require --dev bladewell/bladewell:^1.1` first. Read the [changelog](https://github.com/rkwebforge/bladewell/blob/main/CHANGELOG.md) for the widgets you use before moving.
 
 ## AI agents
 

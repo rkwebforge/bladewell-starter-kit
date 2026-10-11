@@ -2,17 +2,18 @@
     "_readme": "Written by php artisan bladewell:add. Lets a re-run update files you have not edited. Commit it.",
     "files": {
         "app/View/Widget/ElementIds.php": "f658300dd5c60fb663d99a03851ffc8942912cef05efba65b0aabddfff71993d",
-        "resources/css/widget/base.css": "27146b4af470d7ab4661f773ce8c606f981bfd9e64ee5cb6ca1d433c8af2650c",
+        "resources/css/widget/base.css": "556740d6fdb8e64405cc805dead44188da3798ee75c15d06934fa289a37544f1",
         "resources/css/widget/theme.css": "25dcc19daec9dfbff1110449dd5c856b457299b4f73ee95eaa03198ec44145d8",
-        "resources/js/widget/button/index.js": "5764538ecf5fad15dacb406e32665c4148437e288e9aa51af1701014e34fc41b",
-        "resources/js/widget/dropdown/index.js": "717844634bb675dbf668e76e278279709b804cbeabe9792d56e7291ab6410104",
-        "resources/js/widget/modal/index.js": "dcd0b7730b58b3d40d2161098232fed487cc9db0b13884dfc23803e4568d33cf",
+        "resources/js/widget/button/index.js": "74cf7e6f62b2f3f1a2a667ce1688dcab66cbdfb3afe29cc96ec30ff60b031893",
+        "resources/js/widget/dropdown/index.js": "54bf3e3789459ff30ebe9517cf177d0b0e7920c1f34f74fbae5026b72877129d",
+        "resources/js/widget/modal/index.js": "d33be01e8cc99422e8b78d73838e6aef1039eba93827bdbcdfeab3691ad38d61",
         "resources/views/components/widget/button/back.blade.php": "d72823807ec7b83f61552dc5cf853e6623518978d524f893c2a74fcf75bfa1b2",
-        "resources/views/components/widget/button/index.blade.php": "69242b26cbf90c2f5cf425113e9b693c8816cfce077aa994697ddb3bd84eb205",
-        "resources/views/components/widget/dropdown/divider.blade.php": "771fd33f4dddb6c53b6a7879128a12f1f0f2419af7954020a0aa448a0773ca87",
-        "resources/views/components/widget/dropdown/index.blade.php": "c7dea913230344fc384c91cbd2e0da9e6cd94797865dc90e33c64214f36a88f6",
-        "resources/views/components/widget/dropdown/item.blade.php": "6449be3aae5f4b8b0713377f2d91727b37a7c1d47e958a99037321a5f2b7ad8a",
-        "resources/views/components/widget/icon/index.blade.php": "e075be46d8a9bd51259ba63088f056c54c8c76c4771da9aaa16a704a6192e8f6",
-        "resources/views/components/widget/modal/index.blade.php": "5e22b21b61f9c59d360b0fb5e2a6f3177a544cdae16b7595203cf9f4c071f75f"
+        "resources/views/components/widget/button/index.blade.php": "7f5f1a6d346431056e4499c0eaa1450a531146567f4816dbbb89905a3d4ff42b",
+        "resources/views/components/widget/dropdown/divider.blade.php": "c627ab1fa4da8ed800aec8826d40d368451302ffab5a310455b5ac2aafd612f9",
+        "resources/views/components/widget/dropdown/index.blade.php": "076de0dfaf7e71d38f35a6a719e205c0dfec7fd63c61392ea384526328a12dca",
+        "resources/views/components/widget/dropdown/item.blade.php": "465af08e8f9e4517f4199d19eaf35eb54261b854f2e674084d87d3c63f3b50e6",
+        "resources/views/components/widget/dropdown/menu.blade.php": "119a3fb3aeb0821147f0117817a8a53a5eaa4ba0af151b8ff1ec13f37f17d19f",
+        "resources/views/components/widget/icon/index.blade.php": "8eb09f2f1d70dd44d924b4f39b9d1603a6a169c5e9fa0d9624d78bb5f663044c",
+        "resources/views/components/widget/modal/index.blade.php": "0d179da79fede9830a259713f0286040c416d84cca800378219f8deeee8a15a1"
     }
 }
