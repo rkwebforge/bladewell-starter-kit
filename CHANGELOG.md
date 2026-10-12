@@ -2,6 +2,13 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.7
+
+Built on Bladewell 1.2.1.
+
+- Text the browser autofills in a form field follows a switch between light and dark at once. It kept the colour it had when it was filled, so after switching it could be light text on a light field until the page was reloaded. The fix is in `resources/css/widget/base.css`.
+- An app made from an earlier kit gets it with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed`.
+
 ## 2026.10.6
 
 Built on Bladewell 1.2.0.
