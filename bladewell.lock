@@ -2,7 +2,7 @@
     "_readme": "Written by php artisan bladewell:add. Lets a re-run update files you have not edited. Commit it.",
     "files": {
         "app/View/Widget/ElementIds.php": "f658300dd5c60fb663d99a03851ffc8942912cef05efba65b0aabddfff71993d",
-        "resources/css/widget/base.css": "556740d6fdb8e64405cc805dead44188da3798ee75c15d06934fa289a37544f1",
+        "resources/css/widget/base.css": "b6f13012473b0b1c3dda5bd89cc59c4e9e650a8cf6f78910c9c4717d77d72a47",
         "resources/css/widget/theme.css": "25dcc19daec9dfbff1110449dd5c856b457299b4f73ee95eaa03198ec44145d8",
         "resources/js/widget/button/index.js": "74cf7e6f62b2f3f1a2a667ce1688dcab66cbdfb3afe29cc96ec30ff60b031893",
         "resources/js/widget/dropdown/index.js": "54bf3e3789459ff30ebe9517cf177d0b0e7920c1f34f74fbae5026b72877129d",
