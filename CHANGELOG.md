@@ -2,6 +2,16 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.9
+
+Built on Bladewell 1.3.1.
+
+- `php artisan bladewell:add` with no names shows a list to select widgets from: type to narrow it, Space to select, Enter to install. A mistyped name suggests the closest widget instead of listing them all.
+- `php artisan bladewell:list` fits your terminal: each widget and what it also installs, without the long descriptions.
+- Your agent's rules (`CLAUDE.md`, `AGENTS.md`) point it to `php artisan bladewell:list --json` to find a widget, which says what each one does.
+- Your agent's Boost skills (`.claude/skills`, `.agents/skills`) are refreshed to `laravel/boost` 2.10.3's, which the kit already required: best practices, conventions, Tailwind and testing.
+- The widgets don't change. An app made from an earlier kit gets all of this with `composer update bladewell/bladewell` and `php artisan boost:update`.
+
 ## 2026.10.8
 
 Built on Bladewell 1.2.2.
