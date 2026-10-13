@@ -2,6 +2,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.8
+
+Built on Bladewell 1.2.2.
+
+- Widgets you add from now on come with Bladewell 1.2.2's security fixes: search and the command palette open only page, email and phone links from your app's results, and a tree loads `children-url` only from your own site. The widgets the kit ships with don't change.
+- Your agent's rules (`CLAUDE.md`, `AGENTS.md`) say that the URLs a widget calls (`suggest-url`, `search-url`, `children-url`, `upload-url`) are named routes in `routes/web.php`, not `routes/api.php`, so they share the page's sign-in and CSRF protection.
+- An app made from an earlier kit gets both with `composer update bladewell/bladewell`, `php artisan bladewell:add --installed` and `php artisan boost:update`.
+
 ## 2026.10.7
 
 Built on Bladewell 1.2.1.
