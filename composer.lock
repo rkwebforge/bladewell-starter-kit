@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f64e95ecb2dcaf609544483c131ecce",
+    "content-hash": "d6227dd55d252a1ff6f451793b936001",
     "packages": [
         {
             "name": "brick/math",
@@ -6154,22 +6154,23 @@
     "packages-dev": [
         {
             "name": "bladewell/bladewell",
-            "version": "v1.2.2",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rkwebforge/bladewell.git",
-                "reference": "8ab386d86fc3982cd4157f0eee48ec38d7b3b028"
+                "reference": "0099056160554ca09fe6bfb4869a65cb64ee432b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rkwebforge/bladewell/zipball/8ab386d86fc3982cd4157f0eee48ec38d7b3b028",
-                "reference": "8ab386d86fc3982cd4157f0eee48ec38d7b3b028",
+                "url": "https://api.github.com/repos/rkwebforge/bladewell/zipball/0099056160554ca09fe6bfb4869a65cb64ee432b",
+                "reference": "0099056160554ca09fe6bfb4869a65cb64ee432b",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^12.0|^13.0",
                 "illuminate/filesystem": "^12.0|^13.0",
                 "illuminate/support": "^12.0|^13.0",
+                "laravel/prompts": "^0.3",
                 "php": "^8.3"
             },
             "type": "library",
@@ -6214,7 +6215,7 @@
                 "issues": "https://github.com/rkwebforge/bladewell-site/issues",
                 "source": "https://github.com/rkwebforge/bladewell"
             },
-            "time": "2026-10-13T07:33:25+00:00"
+            "time": "2026-10-13T17:36:45+00:00"
         },
         {
             "name": "composer/semver",
