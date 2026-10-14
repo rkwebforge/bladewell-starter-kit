@@ -2,6 +2,13 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.10
+
+Built on Bladewell 1.3.2.
+
+- The Bladewell MCP server (`php artisan bladewell:mcp`) sends its answers as compact JSON, so they use fewer of your agent's tokens. Your agent gets the same information.
+- The widgets and your agent's rules don't change. An app made from an earlier kit gets this with `composer update bladewell/bladewell`.
+
 ## 2026.10.9
 
 Built on Bladewell 1.3.1.
