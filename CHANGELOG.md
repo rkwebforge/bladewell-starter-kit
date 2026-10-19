@@ -1,5 +1,8 @@
 # Changelog
 
+> [!IMPORTANT]
+> This is the Bladewell starter kit's changelog, not your app's. It came with the kit so you can tell which release your app started from: the first entry below. Don't add your app's changes here; start your own changelog or replace this file when you like.
+
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
 ## 2026.10.10

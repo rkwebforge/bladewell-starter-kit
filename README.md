@@ -6,6 +6,9 @@ Plain Blade and a small vanilla JS module per widget: no React, Vue, Inertia or 
 
 ## Start a new app
 
+> [!IMPORTANT]
+> Don't `git clone` this repo to start an app. A clone keeps this repo's history and points `origin` here, and skips setup: no `vendor/`, no `.env`, no app key. Use `composer create-project` below: it gives you a clean copy of the latest release.
+
 ```bash
 composer create-project bladewell/starter-kit my-app
 cd my-app
