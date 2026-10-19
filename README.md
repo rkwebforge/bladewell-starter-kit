@@ -4,6 +4,14 @@ A Laravel starter kit with [Bladewell](https://www.bladewellui.com) widgets, Tai
 
 Plain Blade and a small vanilla JS module per widget: no React, Vue, Inertia or Alpine. Works under a strict Content Security Policy.
 
+## Requirements
+
+- PHP 8.3 or later
+- Composer
+- Node.js 20.19 or later (or 22.12 or later), for Vite 8
+
+The full installation guide is at <https://www.bladewellui.com/docs/installation#starter-kit>.
+
 ## Start a new app
 
 > [!IMPORTANT]
