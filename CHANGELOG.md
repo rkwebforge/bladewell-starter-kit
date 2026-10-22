@@ -5,6 +5,13 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.11
+
+Built on Bladewell 1.3.3.
+
+- Input backgrounds are a shade darker, so fields stand out from the card behind them on dim or washed-out screens. Placeholders and hints darken with them to stay readable.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell` and `php artisan bladewell:add --installed`. If you've edited `resources/css/widget/theme.css`, that leaves it alone: set `--color-field` to `#ebedf1` and `--color-muted` to `#5d6679` there yourself.
+
 ## 2026.10.10
 
 Built on Bladewell 1.3.2.
