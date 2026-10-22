@@ -3,7 +3,7 @@
     "files": {
         "app/View/Widget/ElementIds.php": "f658300dd5c60fb663d99a03851ffc8942912cef05efba65b0aabddfff71993d",
         "resources/css/widget/base.css": "b6f13012473b0b1c3dda5bd89cc59c4e9e650a8cf6f78910c9c4717d77d72a47",
-        "resources/css/widget/theme.css": "25dcc19daec9dfbff1110449dd5c856b457299b4f73ee95eaa03198ec44145d8",
+        "resources/css/widget/theme.css": "9c226bf174acdf30a9a872809d55d65749e4602e610ba1787de5f65d70a16c3d",
         "resources/js/widget/button/index.js": "74cf7e6f62b2f3f1a2a667ce1688dcab66cbdfb3afe29cc96ec30ff60b031893",
         "resources/js/widget/dropdown/index.js": "54bf3e3789459ff30ebe9517cf177d0b0e7920c1f34f74fbae5026b72877129d",
         "resources/js/widget/modal/index.js": "d33be01e8cc99422e8b78d73838e6aef1039eba93827bdbcdfeab3691ad38d61",
