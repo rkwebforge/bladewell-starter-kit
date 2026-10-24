@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.12
+
+Built on Bladewell 1.4.0.
+
+- Three new widgets you can add when you need them: `chat`, for an AI assistant or people messaging, sent without reloading the page; `sidebar-layout`, an app frame whose sidebar collapses to icons and slides in on phones, with an optional chat panel; and `auth-layout`, for sign-in, sign-up and password pages. Add one with `php artisan bladewell:add chat`.
+- The icon set has a `panel-left` icon. Nothing in the kit's own pages changes.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell` and `php artisan bladewell:add --installed`.
+
 ## 2026.10.11
 
 Built on Bladewell 1.3.3.
