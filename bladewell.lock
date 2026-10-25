@@ -6,7 +6,7 @@
         "resources/css/widget/theme.css": "9c226bf174acdf30a9a872809d55d65749e4602e610ba1787de5f65d70a16c3d",
         "resources/js/widget/button/index.js": "74cf7e6f62b2f3f1a2a667ce1688dcab66cbdfb3afe29cc96ec30ff60b031893",
         "resources/js/widget/dropdown/index.js": "54bf3e3789459ff30ebe9517cf177d0b0e7920c1f34f74fbae5026b72877129d",
-        "resources/js/widget/modal/index.js": "d33be01e8cc99422e8b78d73838e6aef1039eba93827bdbcdfeab3691ad38d61",
+        "resources/js/widget/modal/index.js": "a706cf882e1295b3d594305e800d592fffabe7facc6dc4af1c7c9c945fc37b88",
         "resources/views/components/widget/button/back.blade.php": "d72823807ec7b83f61552dc5cf853e6623518978d524f893c2a74fcf75bfa1b2",
         "resources/views/components/widget/button/index.blade.php": "7f5f1a6d346431056e4499c0eaa1450a531146567f4816dbbb89905a3d4ff42b",
         "resources/views/components/widget/dropdown/divider.blade.php": "c627ab1fa4da8ed800aec8826d40d368451302ffab5a310455b5ac2aafd612f9",

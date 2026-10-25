@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.13
+
+Built on Bladewell 1.4.1.
+
+- With one modal open over another, Escape closes the one on top, and `reset-on-close` resets any form, whatever its fields are called.
+- `php artisan bladewell:add --force` overwrites only the widgets you name, so your edits to `theme.css` and `base.css` stay. The Bladewell MCP server answers agents that send several requests at once.
+- Widgets you add from now on, such as `select`, `datepicker`, `table`, `number` and `phone`, come with this release's fixes; Bladewell's changelog lists them.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell` and `php artisan bladewell:add --installed`.
+
 ## 2026.10.12
 
 Built on Bladewell 1.4.0.
