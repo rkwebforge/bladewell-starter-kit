@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.15
+
+Built on Bladewell 1.4.3.
+
+- The rules for your AI agent (`CLAUDE.md`, `AGENTS.md`) now say not to wrap widgets in `wire:ignore` in a Livewire component, which would stop a field showing values set in PHP and its errors, and to set a date picker's, select's or similar field's value from the server or Livewire rather than from a script or Alpine, where it wouldn't show.
+- No widget changed in this release, so the ones already in your app stay as they are.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell` and `php artisan boost:update`.
+
 ## 2026.10.14
 
 Built on Bladewell 1.4.2.
