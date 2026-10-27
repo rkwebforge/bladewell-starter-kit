@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.14
+
+Built on Bladewell 1.4.2.
+
+- Escape closes only the layer on top: a dropdown open in a modal closes first, even in a modal that can't be dismissed, and focus goes back to what opened it. A dropdown stays on screen after the window is resized, and pressing the same letter again moves to the next item starting with it.
+- In your own Livewire tests, calling an action after `Livewire::test()` no longer throws "Duplicate element id" for a widget with its own `id`.
+- Widgets you add from now on, such as `tags` (with a new `layout="below"`), `chat`, `tree`, `toast` and `otp`, come with this release's fixes; Bladewell's changelog lists them.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell` and `php artisan bladewell:add --installed`.
+
 ## 2026.10.13
 
 Built on Bladewell 1.4.1.
