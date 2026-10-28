@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.16
+
+Built on Bladewell 1.4.4.
+
+- A kanban board is one command away: `php artisan bladewell:add kanban`. People move its cards by a menu, the keyboard, a tap or a drag, and each move is saved to your route or, in a Livewire component, with `wire:kanban-move`.
+- A Turnstile, reCAPTCHA or hCaptcha captcha binds with `wire:model` in a Livewire component, and a form that fails validation gets a new token, so it can be sent again.
+- No widget in the kit changed in this release, so the ones already in your app stay as they are.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` if it uses the captcha.
+
 ## 2026.10.15
 
 Built on Bladewell 1.4.3.
