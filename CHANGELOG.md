@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.17
+
+Built on Bladewell 1.4.5.
+
+- Kanban cards drag by touch too: hold a finger still on a card for a moment and it comes up to drag, as with a mouse, while a swipe still scrolls the board and the page. Moves are saved the same way as before, so your route or `wire:kanban-move` needs no change.
+- No widget in the kit changed in this release, so the ones already in your app stay as they are.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` if it uses the kanban board.
+
 ## 2026.10.16
 
 Built on Bladewell 1.4.4.
