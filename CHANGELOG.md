@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.10.18
+
+Built on Bladewell 1.4.6.
+
+- Tooltips work on a touch screen: a long press on a button or link shows its tooltip without pressing it, a tap still presses, and a tooltip opened by a finger shows above it. A chart's cursor tooltip can be read bar by bar by holding a bar and sliding.
+- No widget in the kit changed in this release, so the ones already in your app stay as they are.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` if it uses `tooltip` or `tooltip-cursor`.
+
 ## 2026.10.17
 
 Built on Bladewell 1.4.5.
