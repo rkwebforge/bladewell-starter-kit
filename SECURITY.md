@@ -15,6 +15,7 @@ What this starter kit protects you from, what you need to do before going live, 
 | Error pages that never show details, each with a way home | `resources/views/errors/` |
 | No framing by other sites (clickjacking), no MIME sniffing, limited Referer, HSTS in production | `SecurityHeaders` middleware |
 | HTTPS links in production; strict Eloquent while you build; no `db:wipe` in production | `AppServiceProvider` |
+| Answers only for your own domain and its subdomains in production, so a forged `Host` header can't put another site in your links (a password reset's, say) | `trustHosts()` in `bootstrap/app.php` |
 | Dependencies checked for known vulnerabilities on every push | `.github/workflows/ci.yml` |
 
 ## Adding accounts
@@ -33,7 +34,7 @@ The kit has no accounts. When you add them, yourself or with the prompts on the 
 
 - [ ] `APP_ENV=production` and `APP_DEBUG=false`. Debug mode shows your code, settings and secrets to anyone who triggers an error.
 - [ ] A fresh `APP_KEY` (`php artisan key:generate`), different from the one you developed with. Never commit `.env`.
-- [ ] HTTPS on your domain. `APP_URL` starts with `https://`.
+- [ ] HTTPS on your domain. `APP_URL` is your real address and starts with `https://`. The app answers only for that host and its subdomains, so a wrong `APP_URL` turns every request away with a 400. Serving another domain too? Add it as an anchored pattern, `$middleware->trustHosts(at: ['^(.+\.)?example\.org$'])`: each one is a regular expression, and a plain `'example.org'` would also let in `example.org.evil.net`.
 - [ ] Behind a load balancer or proxy (Forge with a load balancer, Cloudflare, AWS ELB, Heroku…)? Tell Laravel to trust it, or it can't see that requests are HTTPS or who sent them, and rate limits treat everyone as one IP. In `bootstrap/app.php`: `$middleware->trustProxies(at: ['10.0.0.0/8'])`, with your proxy's addresses, not `'*'` unless the proxy is the only way in.
 - [ ] Sessions and the cache are kept in files under `storage/`. Running more than one server? Move them to the database or Redis (`SESSION_DRIVER`, `CACHE_STORE`).
 - [ ] `php artisan config:cache route:cache view:cache` on each deploy.
