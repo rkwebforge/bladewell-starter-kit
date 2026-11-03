@@ -5,6 +5,11 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # PHPUnit 13 needs PHP 8.4, and the kit supports 8.3, so CI can't install it. Lift this when the kit's minimum
+      # is 8.4. PHPUnit 12 updates still come.
+      - dependency-name: phpunit/phpunit
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: npm
     directory: /
     schedule:
