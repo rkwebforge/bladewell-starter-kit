@@ -14,6 +14,6 @@
         "resources/views/components/widget/dropdown/item.blade.php": "465af08e8f9e4517f4199d19eaf35eb54261b854f2e674084d87d3c63f3b50e6",
         "resources/views/components/widget/dropdown/menu.blade.php": "119a3fb3aeb0821147f0117817a8a53a5eaa4ba0af151b8ff1ec13f37f17d19f",
         "resources/views/components/widget/icon/index.blade.php": "c3160b58a884a553b77b15f32b180dcb016f297195ab53abf560929fe735350d",
-        "resources/views/components/widget/modal/index.blade.php": "0d179da79fede9830a259713f0286040c416d84cca800378219f8deeee8a15a1"
+        "resources/views/components/widget/modal/index.blade.php": "43bb9d7da678ae3193ba3092b42dd8b4730ce3b07816e39216c4c46e23bd2f17"
     }
 }
