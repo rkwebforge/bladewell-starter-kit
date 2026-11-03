@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.1
+
+Built on Bladewell 1.4.8.
+
+- In production the app answers only for the host in `APP_URL` and its subdomains, and turns any other away with a 400. A forged `Host` header can no longer put another site in the links the app builds, such as a password reset's once you add accounts. So `APP_URL` must be your real address; `SECURITY.md` says how to add a second domain safely.
+- The agent guidelines in `CLAUDE.md` and `AGENTS.md` cover the security rules an agent would otherwise get wrong: keeping `trustHosts()`, trusting a proxy by its addresses and never `'*'`, building models from validated input, throttling sign-in, reset, mail and type-ahead routes, storing uploads outside `public/`, never exempting a route from CSRF, and never logging secrets.
+- No widget in the kit changed in this release, so the ones already in your app stay as they are.
+- An app made from an earlier kit gets this by adding `$middleware->trustHosts();` to `withMiddleware()` in `bootstrap/app.php`, and copying the new lines from the Security section of `.ai/guidelines/bladewell-starter-kit.md` into its own, then running `php artisan boost:update`.
+
 ## 2026.11.0
 
 Built on Bladewell 1.4.7.
