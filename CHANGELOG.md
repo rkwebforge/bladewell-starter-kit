@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.0
+
+Built on Bladewell 1.4.7.
+
+- The kit's modal no longer logs a PHP 8.5 deprecation ("Using null as an array offset") each time a centred dialog renders.
+- The agent guidelines in `CLAUDE.md` and `AGENTS.md` ask your agent to read a widget's server notes before writing the route behind it. Each component that talks to your app now has them: what to check and what to keep cheap, under "On the server" on its page.
+- Kanban cards ring for a moment where they land after a move, and red when your route sends them back.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` for the modal and `php artisan boost:update` for the guidelines.
+
 ## 2026.10.18
 
 Built on Bladewell 1.4.6.
