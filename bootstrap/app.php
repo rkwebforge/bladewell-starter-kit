@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Global, so error pages and redirects get the headers too.
         $middleware->append(SecurityHeaders::class);
+        // Only the host in APP_URL and its subdomains, so a forged Host header can't put another site in the links the
+        // app builds, such as a password reset's. Laravel skips this locally and in tests.
+        $middleware->trustHosts();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

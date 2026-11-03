@@ -16,6 +16,10 @@ This app was built from the Bladewell starter kit: Blade pages, Tailwind CSS v4 
 - Queries for a signed-in person's data go through their relations (`$request->user()->orders()`), so they can only reach their own rows. Records people share need a policy.
 - Sort and filter columns from the query string are checked against a fixed list before they reach the query.
 - Print with `{{ }}`. Use `{!! !!}` only for markup the app built itself, with a comment saying why.
+- Don't remove `trustHosts()` from `bootstrap/app.php`: it stops forged `Host` headers putting another site in password-reset links. `APP_URL` is the real address; a second domain is an anchored pattern, `'^(.+\.)?example\.org$'`. Behind a proxy, `trustProxies(at: [...])` with its addresses, never `'*'`, which lets any client fake their IP.
+- Validate in Form Requests and build models from `$request->validated()`, never `$request->all()`; `$fillable`, never `$guarded = []`.
+- Throttle routes that sign in, reset passwords, send mail or texts, or run as people type. Uploads: check `mimes:` and `max:`, and store them outside `public/` under generated names.
+- Never exempt a route from CSRF to fix a 419, and never log passwords, tokens or keys.
 
 ## Tests
 
