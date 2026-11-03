@@ -7,12 +7,13 @@ The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that
 
 ## 2026.11.2
 
-Built on Bladewell 1.4.9.
+Built on Bladewell 1.4.10.
 
 - `SECURITY.md`'s go-live checklist no longer says `trustProxies(at: '*')` is fine when the proxy is the only way in. It isn't: `'*'` trusts every address, so Laravel takes the first `X-Forwarded-For` entry, which the visitor writes, and anyone can pass as any IP and get around your rate limits. Trust your proxy by its addresses instead.
-- Your agent's examples for the routes behind six widgets now do what their server notes ask: the select's search endpoint needs a signed-in person and searches only their own records, the kanban move route checks the move against the card's current stage, the file upload attaches only the person's own uploads, and the chat component throttles sending and paid model calls. It reads them through the Bladewell MCP server and `bladewell:list --json`.
+- Your agent's examples for the routes behind widgets now hold up to forged and simultaneous requests. The select's search and its submit check both go through the person's own records, the chat component authorizes each action and claims a reply on the server before paying for it, and the kanban move route checks the move against the card it locks. It reads them through the Bladewell MCP server and `bladewell:list --json`.
+- The agent guidelines in `CLAUDE.md` and `AGENTS.md` say `before_or_equal:today` uses the server's configured timezone, not that it's UTC, and Laravel Boost 2.10.4's skills are updated with them.
 - No widget in the kit changed in this release, so the ones already in your app stay as they are.
-- An app made from an earlier kit gets this with `composer update bladewell/bladewell`. If it trusts proxies with `'*'`, change that to the proxy's addresses.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell` and `php artisan boost:update`. If it trusts proxies with `'*'`, change that to the proxy's addresses.
 
 ## 2026.11.1
 

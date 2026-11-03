@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1061b58a4def843db200553a45862a4c",
+    "content-hash": "894468f8aa66e5f9c6597d8971684c0b",
     "packages": [
         {
             "name": "brick/math",
@@ -6240,16 +6240,16 @@
     "packages-dev": [
         {
             "name": "bladewell/bladewell",
-            "version": "v1.4.9",
+            "version": "v1.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rkwebforge/bladewell.git",
-                "reference": "89ebe5eeb74a4007905df4536f22c4a024acfff4"
+                "reference": "39369c557475f8cc8428376f899eaa08a43bc0d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rkwebforge/bladewell/zipball/89ebe5eeb74a4007905df4536f22c4a024acfff4",
-                "reference": "89ebe5eeb74a4007905df4536f22c4a024acfff4",
+                "url": "https://api.github.com/repos/rkwebforge/bladewell/zipball/39369c557475f8cc8428376f899eaa08a43bc0d2",
+                "reference": "39369c557475f8cc8428376f899eaa08a43bc0d2",
                 "shasum": ""
             },
             "require": {
@@ -6311,7 +6311,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-03T15:12:25+00:00"
+            "time": "2026-11-03T16:20:32+00:00"
         },
         {
             "name": "composer/semver",
