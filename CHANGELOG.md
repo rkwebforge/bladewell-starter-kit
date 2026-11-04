@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.3
+
+Built on Bladewell 1.4.11.
+
+- Your agent's chat example answers the exact message it was sent, builds the model's context only up to that message, and lets a reply that failed be retried instead of leaving it claimed. The history example pages by cursor, so messages that arrive while someone scrolls back don't show up twice. It reads them through the Bladewell MCP server and `bladewell:list --json`.
+- No widget in the kit changed in this release, so the ones already in your app stay as they are.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`.
+
 ## 2026.11.2
 
 Built on Bladewell 1.4.10.
