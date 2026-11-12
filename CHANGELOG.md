@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.4
+
+Built on Bladewell 1.5.0.
+
+- Buttons fade between colours on hover and press, and change at once for people who've asked their system for less motion.
+- Five new widgets can be added: a calendar of events by month, week or day, a sortable list, a repeater for rows of fields, an image cropper and a filter builder, with `php artisan bladewell:add` and their name. Your agent finds them through the Bladewell MCP server and `bladewell:list --json`.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` to update the widgets it already has.
+
 ## 2026.11.3
 
 Built on Bladewell 1.4.11.
