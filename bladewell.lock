@@ -2,10 +2,10 @@
     "_readme": "Written by php artisan bladewell:add. Lets a re-run update files you have not edited. Commit it.",
     "files": {
         "app/View/Widget/ElementIds.php": "96046da711152816c56b88c95178efd7b7108ba23ccbd23606bc421842ac8364",
-        "resources/css/widget/base.css": "95909bb147efee17f706eb047365c32099b6fa819ff548696a2f082fc6e9d710",
+        "resources/css/widget/base.css": "37a1c2c4a7576841198cdfbfcd74e792d06672d32572a5c439dd70072483cf0d",
         "resources/css/widget/theme.css": "9c226bf174acdf30a9a872809d55d65749e4602e610ba1787de5f65d70a16c3d",
         "resources/js/widget/button/index.js": "74cf7e6f62b2f3f1a2a667ce1688dcab66cbdfb3afe29cc96ec30ff60b031893",
-        "resources/js/widget/dropdown/index.js": "b3a89aafceb006e70f60a2b7036018bac944927c53d62d414b804270be7a2b28",
+        "resources/js/widget/dropdown/index.js": "b00e663a7167575d470b0fe4039cc5b2fb1546964982bd89d2b8392077560442",
         "resources/js/widget/modal/index.js": "d97fcc41245127b8a89e81dc81499757c15df8b05f9c01123b81cc2de035e694",
         "resources/views/components/widget/button/back.blade.php": "d72823807ec7b83f61552dc5cf853e6623518978d524f893c2a74fcf75bfa1b2",
         "resources/views/components/widget/button/index.blade.php": "dea061d8927fee8d2c223be4687eeb0a6810ddc40c1a98afc135f081f5bf014e",
