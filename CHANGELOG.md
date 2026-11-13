@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.5
+
+Built on Bladewell 1.5.1.
+
+- A modal marked `open` also opens when you reach its page through `wire:navigate`.
+- Pasting, undo and Livewire are smoother in several widgets you can add, like number, phone, popover and color-picker. Your agent sees the fixes through the Bladewell MCP server and `bladewell:list --json`.
+- Laravel is updated to 13.40, Vite to 8.3.7 and Tailwind CSS to 4.3.5.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` to update the widgets it already has.
+
 ## 2026.11.4
 
 Built on Bladewell 1.5.0.
