@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.7
+
+Built on Bladewell 1.5.3.
+
+- Secondary and tertiary buttons no longer flicker on hover, and pressing a button feels smoother.
+- Popups, chips, tree nodes and the command palette in several widgets you can add, like select, the date pickers, tags, table and tree, now open, close and move smoothly. Your agent sees the fixes through the Bladewell MCP server and `bladewell:list --json`.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` to update the widgets it already has.
+
 ## 2026.11.6
 
 Built on Bladewell 1.5.2.
