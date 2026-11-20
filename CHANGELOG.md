@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.9
+
+Built on Bladewell 1.5.5.
+
+- Warnings are shown in amber instead of yellow in the light theme, so a warning's dots, borders and icons can be seen on white.
+- The toast you can add is easier to live with: the same message shown again is counted (×2) instead of stacking, a pile of toasts gets a Dismiss all button, a toast can carry an action like Undo, and on a phone it swipes away. Its layout snippet keeps errors and warnings until they're dismissed. File upload writes sizes in your app's locale. Your agent sees all of it through the Bladewell MCP server and `bladewell:list --json`.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` to update the widgets it already has.
+
 ## 2026.11.8
 
 Built on Bladewell 1.5.4.
