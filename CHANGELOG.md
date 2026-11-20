@@ -5,6 +5,15 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.8
+
+Built on Bladewell 1.5.4.
+
+- Keyboard focus shows on every button, menu and dialog in Windows High Contrast, where it used to vanish.
+- A modal that can't be closed also asks the browser to ignore Esc and the back gesture, and a modal opened again no longer reports the button that closed it last time.
+- Many widgets you can add now work better with screen readers, Chinese, Japanese and Korean input methods, right-to-left pages and your app's locale, like select, search, phone, the date pickers, table, tabs, toast and clock. New: `variant="native"` on the time picker and move buttons on the image cropper. Your agent sees all of it through the Bladewell MCP server and `bladewell:list --json`.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan bladewell:add --installed` to update the widgets it already has.
+
 ## 2026.11.7
 
 Built on Bladewell 1.5.3.
