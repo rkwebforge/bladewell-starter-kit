@@ -5,6 +5,14 @@
 
 The kit is versioned by date: `YYYY.MM.N`, where `N` counts the releases in that month from 0.
 
+## 2026.11.10
+
+Built on Bladewell 1.5.6.
+
+- Your agent spends about half the tokens on Bladewell: the MCP server can answer in brief (a component's props, its first example and the controller its routes need, with the rest listed to ask for), and the agent rules in `AGENTS.md` and `CLAUDE.md` tell it to. They also tell it Bladewell isn't BladewindUI, so it doesn't write that library's tags from memory.
+- The phone field you can add shows just the digits once you leave it, and its notes show how to validate a number on the server.
+- An app made from an earlier kit gets this with `composer update bladewell/bladewell`, then `php artisan boost:update` to refresh the agent rules.
+
 ## 2026.11.9
 
 Built on Bladewell 1.5.5.
